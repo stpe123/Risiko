@@ -1,0 +1,91 @@
+[Files]
+File0=Gebiet.java
+File1=Soldat.java
+File2=Spieler.java
+File3=Verwaltung.java
+File4=Weltkarte.java
+File5=Wuerfel.java
+
+[Box:  - Gebiet]
+X=20
+Y=409
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Soldat]
+X=272
+Y=634
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Spieler]
+X=380
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Verwaltung]
+X=20
+Y=634
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Weltkarte]
+X=136
+Y=40
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Wuerfel]
+X=642
+Y=409
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Diagram]
+comments=0
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+ShowConnections=0
+Fontname=MS Sans Serif
+Fontsize=10
+ShowObjectDiagram=0
+
+[Connections]
+V0=Gebiet#Soldat#Aggregation####0#0#-1
+V1=Weltkarte#Gebiet#Composition####0#0#-1
+V2=Spieler#Gebiet#AssociationDirected####0#0#0
+V3=Spieler#Wuerfel#AssociationDirected####0#0#0
+V4=Spieler#Soldat#AssociationDirected####0#0#0
+
+[Interactive]
+I0=
+
