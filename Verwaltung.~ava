@@ -15,20 +15,16 @@ public class Verwaltung {
   public void main() {
     
   }
-  
+
   private void GebieteMischen() {
     
   }
-  
+
   private void GebieteAnSpielerVerteilen() {
     
   }
-  
+
   private void WuerfelAugenzahlVergleichen() {
-    
-  }
-  
-  private void GebieteEinsammeln() {
     
   }
 
