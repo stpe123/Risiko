@@ -9,13 +9,13 @@
 public class Gebiet {
   
   // Anfang Attribute
-  private String NameTest;
+  private String Name;
   private String Nachbargebiete;
   private Soldat Soldat;
   // Ende Attribute
   
-  public Gebiet(Soldat Soldat, String NameTest, String Nachbargebiete) {
-    this.NameTest = NameTest;
+  public Gebiet(Soldat Soldat, String Name, String Nachbargebiete) {
+    this.Name = Name;
     this.Nachbargebiete = Nachbargebiete;
     this.Soldat = Soldat;
   }
