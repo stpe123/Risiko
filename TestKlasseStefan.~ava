@@ -6,6 +6,7 @@
   * @Stefan
   */
 
+
 public class TestKlasseStefan {
   
   
@@ -23,7 +24,8 @@ public class TestKlasseStefan {
     m = Stefan.angreifen(); 
     System.out.println(m);
     
+    
   }
   
   // Ende Methoden
-} // end of TestKlasseStefan
+} // end of TestklasseStefan

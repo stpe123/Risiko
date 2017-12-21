@@ -48,7 +48,7 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-[Box:  - TestKlasseStefan]
+[Box:  - TestklasseStefan]
 X=167
 Y=40
 MinVis=0
@@ -105,9 +105,12 @@ ShowObjectDiagram=0
 V0=Gebiet#Soldat#Aggregation####0#0#-1
 V1=Weltkarte#Gebiet#Composition####0#0#-1
 V2=Risiko#Verwaltung#AssociationDirected####0#0#0
-V3=Spieler#Gebiet#AssociationDirected####0#0#0
-V4=Spieler#Wuerfel#AssociationDirected####0#0#0
-V5=Spieler#Soldat#AssociationDirected####0#0#0
+V3=Risiko#Spieler#AssociationDirected####0#0#0
+V4=Risiko#TestklasseStefan#AssociationDirected####0#0#0
+V5=Spieler#Gebiet#AssociationDirected####0#0#0
+V6=Spieler#Wuerfel#AssociationDirected####0#0#0
+V7=Spieler#Soldat#AssociationDirected####0#0#0
+V8=TestklasseStefan#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
