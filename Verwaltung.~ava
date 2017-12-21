@@ -6,12 +6,16 @@
   * @author 
   */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
 public class Verwaltung {
   
   // Anfang Attribute
   // Ende Attribute
   
+<<<<<<< HEAD
   
   // Anfang Methoden
   public static void main(String[] args) {
@@ -42,5 +46,24 @@ public class Verwaltung {
     
   }
   
+=======
+  // Anfang Methoden
+  public void main() {
+    
+  }
+
+  private void GebieteMischen() {
+    
+  }
+
+  private void GebieteAnSpielerVerteilen() {
+    
+  }
+
+  private void WuerfelAugenzahlVergleichen() {
+    
+  }
+
+>>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
   // Ende Methoden
 } // end of Verwaltung
