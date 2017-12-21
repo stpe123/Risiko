@@ -60,7 +60,7 @@ public class Spieler {
   *Gibt einen Ineteger von 1 bis 6 zurück
   */
   public void verteidigen() {
-    Augenzahl1 = Wuerfel1.
+    Augenzahl1 = Wuerfel
     return 6;
     
   }
