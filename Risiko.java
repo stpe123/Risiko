@@ -19,7 +19,9 @@ public class Risiko {
   
   // Anfang Methoden
   public void main(String[] args) {
-    
+    VW.GebieteEinsammeln(Erde.getGebiete());
+    VW.GebieteMischen();
+    VW.NaechstenSpielerBestimmen();
   }
   
   // Ende Methoden

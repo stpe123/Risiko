@@ -10,8 +10,8 @@ File7=Weltkarte.java
 File8=Wuerfel.java
 
 [Box:  - Gebiet]
-X=287
-Y=663
+X=286
+Y=413
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -30,8 +30,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Soldat]
-X=383
-Y=901
+X=382
+Y=651
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -40,8 +40,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Spieler]
-X=1121
-Y=611
+X=1120
+Y=361
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -70,8 +70,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Verwaltung]
-X=711
-Y=194
+X=688
+Y=198
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -80,8 +80,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Weltkarte]
-X=403
-Y=555
+X=402
+Y=305
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -90,8 +90,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Wuerfel]
-X=1378
-Y=935
+X=1377
+Y=685
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -119,10 +119,12 @@ V2=Risiko#Verwaltung#AssociationDirected####0#0#0
 V3=Risiko#Spieler#AssociationDirected####0#0#0
 V4=Risiko#TestKlasseStefan#AssociationDirected####0#0#0
 V5=Risiko#TestKlasseAlex#AssociationDirected####0#0#0
-V6=Spieler#Gebiet#AssociationDirected####0#0#0
-V7=Spieler#Wuerfel#AssociationDirected####0#0#0
-V8=Spieler#Soldat#AssociationDirected####0#0#0
-V9=TestKlasseAlex#Verwaltung#AssociationDirected####0#0#0
+V6=Risiko#Weltkarte#AssociationDirected####0#0#0
+V7=Spieler#Gebiet#AssociationDirected####0#0#0
+V8=Spieler#Wuerfel#AssociationDirected####0#0#0
+V9=Spieler#Soldat#AssociationDirected####0#0#0
+V10=TestKlasseAlex#Verwaltung#AssociationDirected####0#0#0
+V11=Verwaltung#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=

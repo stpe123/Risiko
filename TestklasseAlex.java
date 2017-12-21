@@ -13,10 +13,6 @@ public class TestKlasseAlex {
   // Ende Attribute
   
   // Anfang Methoden
-  public Verwaltung getVW() {
-    return VW;
-  }
-
   public void Testmethode() {
     
   }

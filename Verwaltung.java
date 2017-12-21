@@ -10,37 +10,47 @@
 public class Verwaltung {
   
   // Anfang Attribute
+  private Spieler Angreifer;
+  private Spieler Verteidiger;
+  private Spieler HilfseigenschftZumSpielertausch;
   // Ende Attribute
   
   
   // Anfang Methoden
   /**
   *Keine Übergabe- oder Rückgabeparameter*/
-  private void GebieteMischen() {
+  public void GebieteMischen() {
     
   }
   /**Dies ist ein Test
   */
-  private Gebiet GebietAnSpielerUebergeben() {
+  public Gebiet GebietAnSpielerUebergeben() {
     
     return null;
   }
   
   
-  private void WuerfelAugenzahlVergleichen() {
+  public void WuerfelAugenzahlVergleichen() {
     
   }
   
-  //<  <<<<<< HEAD
-  //=======
-  private void GebieteEinsammeln() {
+  /**Erwartet ein Array mit Gebietsobjekten*/
+  public void GebieteEinsammeln(Gebiet[] Gebiete) {
     
   }
+
   
   //>>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
   public void GebieteVerteilen() {
     
   }
   
+  /**Bestimmt, wer als nächstes dran ist*/
+  public void NaechstenSpielerBestimmen() {
+    this.HilfseigenschftZumSpielertausch=this.Angreifer;
+    this.Angreifer=this.Verteidiger;
+    this.Verteidiger=this.HilfseigenschftZumSpielertausch;  
+  }
+
   // Ende Methoden
 } // end of Verwaltung
