@@ -40,9 +40,7 @@ public class Spieler {
   
   /**
   *Keine Eingabewerte
-  Uebergibt eine Zahl von 0 bis 6
-  0 == Spieler will nicht angreifen
-  sonst: Augenzahl des Wuerfels  
+  Ein Objekt wird zurückgegeben: Kriegsgebiet und Augenzahl des Würfels als Atribute
   */
   public int angreifen() {
     //Dialog Box
@@ -60,7 +58,7 @@ public class Spieler {
   *Gibt einen Ineteger von 1 bis 6 zurück
   */
   public void verteidigen() {
-    Augenzahl1 = Wuerfel
+    Augenzahl1 = Wuerfel.getAugenzahl();
     return 6;
     
   }

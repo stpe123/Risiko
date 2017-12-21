@@ -40,9 +40,9 @@ public class Spieler {
   
   /**
   *Keine Eingabewerte
-  Uebergibt eine Zahl von 0 bis 6
-  0 == Spieler will nicht angreifen
-  sonst: Augenzahl des Wuerfels  
+  Ein Objekt wird zurückgegeben: Kriegsgebiet und Augenzahl des Würfels als Atribute
+  Falls nicht angegriffen wird: Augenzahl == 0
+  Kriegsgebiet == noone
   */
   public int angreifen() {
     //Dialog Box
