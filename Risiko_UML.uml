@@ -3,18 +3,10 @@ File0=Gebiet.java
 File1=Risiko.java
 File2=Soldat.java
 File3=Spieler.java
-<<<<<<< HEAD
-File4=TestklasseAlex.java
-File5=TestklasseStefan.java
-File6=Verwaltung.java
-File7=Weltkarte.java
-File8=Wuerfel.java
-=======
 File4=TestKlasseStefan.java
 File5=Verwaltung.java
 File6=Weltkarte.java
 File7=Wuerfel.java
->>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
 
 [Box:  - Gebiet]
 X=379
@@ -27,23 +19,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Risiko]
-<<<<<<< HEAD
 X=791
 Y=14
-MinVis=0
-ShowParameter=4
-SortOrder=0
-ShowIcons=0
-FontSize=10
-FontName=MS Sans Serif
-
-[Box:  - Soldat]
-X=475
-Y=426
-=======
-X=848
-Y=16
->>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -61,15 +38,9 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-<<<<<<< HEAD
-[Box:  - TestklasseAlex]
-X=1166
-Y=18
-=======
 [Box:  - Spieler]
 X=170
 Y=454
->>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -77,15 +48,9 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-<<<<<<< HEAD
 [Box:  - TestklasseStefan]
-X=1425
-Y=25
-=======
-[Box:  - TestKlasseStefan]
 X=167
 Y=40
->>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -94,13 +59,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Verwaltung]
-<<<<<<< HEAD
-X=879
-Y=167
-=======
 X=1144
 Y=37
->>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -130,7 +90,7 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=255
+OffsetX=0
 OffsetY=0
 Visibility=0
 ShowParameter=4
@@ -145,27 +105,19 @@ ShowObjectDiagram=0
 V0=Gebiet#Soldat#Aggregation####0#0#-1
 V1=Weltkarte#Gebiet#Composition####0#0#-1
 V2=Risiko#Verwaltung#AssociationDirected####0#0#0
-<<<<<<< HEAD
 V3=Risiko#Spieler#AssociationDirected####0#0#0
-V4=Risiko#TestklasseAlex#AssociationDirected####0#0#0
-V5=Risiko#TestklasseStefan#AssociationDirected####0#0#0
-V6=Spieler#Gebiet#AssociationDirected####0#0#0
-V7=Spieler#Wuerfel#AssociationDirected####0#0#0
-V8=Spieler#Soldat#AssociationDirected####0#0#0
-V9=TestklasseAlex#Verwaltung#AssociationDirected####0#0#0
-V10=TestklasseStefan#Spieler#AssociationDirected####0#0#0
-=======
-V3=Spieler#Gebiet#AssociationDirected####0#0#0
-V4=Spieler#Wuerfel#AssociationDirected####0#0#0
-V5=Spieler#Soldat#AssociationDirected####0#0#0
->>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
+V4=Risiko#TestklasseStefan#AssociationDirected####0#0#0
+V5=Spieler#Gebiet#AssociationDirected####0#0#0
+V6=Spieler#Wuerfel#AssociationDirected####0#0#0
+V7=Spieler#Soldat#AssociationDirected####0#0#0
+V8=TestklasseStefan#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
 
 [Window]
 Left=-8
-Top=-30
-Width=1382
-Height=500
+Top=-31
+Width=1936
+Height=855
 
