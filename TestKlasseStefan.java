@@ -6,26 +6,16 @@
   * @author 
   */
 
-public class TestKlasseStefan {
-      //Würfel testen
-    int WAugenzahl;
-    Wuerfel Wuerfel1 = new Wuerfel();
-    WAugenzahl = Wuerfel1.getAugenzahl();
-    System.out.println(WAugenzahl);
-    
-    //Spieler testen
-    int m;
-    Spieler Stefan = new Spieler("Stefan");
-    m = Stefan.angreifen(); 
-    System.out.println(m);
+public class TestklasseStefan {
   
   // Anfang Attribute
+  private Spieler Testeigenschaft;
   // Ende Attribute
   
   // Anfang Methoden
-  public void KlassenTesten() {
+  public void Testmethode() {
     
   }
 
   // Ende Methoden
-} // end of TestKlasseStefan
+} // end of TestklasseStefan

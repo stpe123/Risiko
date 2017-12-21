@@ -22,14 +22,18 @@ public class Verwaltung {
     
     
   }
-  
+  /**
+  *Keine Übergabe- oder Rückgabeparameter*/
   private void GebieteMischen() {
     
   }
-  
-  private void GebieteAnSpielerVerteilen() {
+  /**Dies ist ein Test
+  */
+  private Gebiet GebietAnSpielerUebergeben() {
     
+    return null;
   }
+  
   
   private void WuerfelAugenzahlVergleichen() {
     
@@ -42,5 +46,9 @@ public class Verwaltung {
   }
   
   //>>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
+  public void GebieteVerteilen() {
+    
+  }
+  
   // Ende Methoden
 } // end of Verwaltung

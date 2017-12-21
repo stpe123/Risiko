@@ -1,27 +1,13 @@
 [Files]
 File0=Gebiet.java
-<<<<<<< HEAD
-File1=Soldat.java
-File2=Spieler.java
-File3=TestKlasseStefan.java
-File4=Verwaltung.java
-File5=Weltkarte.java
-File6=Wuerfel.java
-=======
 File1=Risiko.java
 File2=Soldat.java
 File3=Spieler.java
-<<<<<<< HEAD
 File4=TestklasseAlex.java
-File5=Verwaltung.java
-File6=Weltkarte.java
-File7=Wuerfel.java
->>>>>>> d11d780ba710c19a0759ffea007e5f453824e5b4
-=======
-File4=Verwaltung.java
-File5=Weltkarte.java
-File6=Wuerfel.java
->>>>>>> AenderungenAnMainUndVerwaltung
+File5=TestklasseStefan.java
+File6=Verwaltung.java
+File7=Weltkarte.java
+File8=Wuerfel.java
 
 [Box:  - Gebiet]
 X=379
@@ -33,15 +19,19 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-<<<<<<< HEAD
-[Box:  - Soldat]
-X=475
-Y=357
-=======
 [Box:  - Risiko]
 X=791
 Y=14
->>>>>>> d11d780ba710c19a0759ffea007e5f453824e5b4
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Soldat]
+X=475
+Y=426
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -59,9 +49,19 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-[Box:  - TestKlasseStefan]
-X=789
-Y=194
+[Box:  - TestklasseAlex]
+X=1166
+Y=18
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - TestklasseStefan]
+X=1425
+Y=25
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -70,13 +70,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Verwaltung]
-<<<<<<< HEAD
-X=946
-Y=45
-=======
 X=879
 Y=167
->>>>>>> d11d780ba710c19a0759ffea007e5f453824e5b4
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -120,26 +115,15 @@ ShowObjectDiagram=0
 [Connections]
 V0=Gebiet#Soldat#Aggregation####0#0#-1
 V1=Weltkarte#Gebiet#Composition####0#0#-1
-<<<<<<< HEAD
-V2=Spieler#Gebiet#AssociationDirected####0#0#0
-V3=Spieler#Wuerfel#AssociationDirected####0#0#0
-V4=Spieler#Soldat#AssociationDirected####0#0#0
-V5=TestKlasseStefan#Wuerfel#AssociationDirected####0#0#0
-V6=TestKlasseStefan#Spieler#AssociationDirected####0#0#0
-=======
 V2=Risiko#Verwaltung#AssociationDirected####0#0#0
-<<<<<<< HEAD
-V3=Spieler#Gebiet#AssociationDirected####0#0#0
-V4=Spieler#Wuerfel#AssociationDirected####0#0#0
-V5=Spieler#Soldat#AssociationDirected####0#0#0
-V6=TestklasseAlex#Verwaltung#AssociationDirected####0#0#0
->>>>>>> d11d780ba710c19a0759ffea007e5f453824e5b4
-=======
 V3=Risiko#Spieler#AssociationDirected####0#0#0
-V4=Spieler#Gebiet#AssociationDirected####0#0#0
-V5=Spieler#Wuerfel#AssociationDirected####0#0#0
-V6=Spieler#Soldat#AssociationDirected####0#0#0
->>>>>>> AenderungenAnMainUndVerwaltung
+V4=Risiko#TestklasseAlex#AssociationDirected####0#0#0
+V5=Risiko#TestklasseStefan#AssociationDirected####0#0#0
+V6=Spieler#Gebiet#AssociationDirected####0#0#0
+V7=Spieler#Wuerfel#AssociationDirected####0#0#0
+V8=Spieler#Soldat#AssociationDirected####0#0#0
+V9=TestklasseAlex#Verwaltung#AssociationDirected####0#0#0
+V10=TestklasseStefan#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
