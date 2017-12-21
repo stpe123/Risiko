@@ -11,11 +11,17 @@ File6=Wuerfel.java
 File1=Risiko.java
 File2=Soldat.java
 File3=Spieler.java
+<<<<<<< HEAD
 File4=TestklasseAlex.java
 File5=Verwaltung.java
 File6=Weltkarte.java
 File7=Wuerfel.java
 >>>>>>> d11d780ba710c19a0759ffea007e5f453824e5b4
+=======
+File4=Verwaltung.java
+File5=Weltkarte.java
+File6=Wuerfel.java
+>>>>>>> AenderungenAnMainUndVerwaltung
 
 [Box:  - Gebiet]
 X=379
@@ -56,16 +62,6 @@ FontName=MS Sans Serif
 [Box:  - TestKlasseStefan]
 X=789
 Y=194
-MinVis=0
-ShowParameter=4
-SortOrder=0
-ShowIcons=0
-FontSize=10
-FontName=MS Sans Serif
-
-[Box:  - TestklasseAlex]
-X=1158
-Y=129
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -132,11 +128,18 @@ V5=TestKlasseStefan#Wuerfel#AssociationDirected####0#0#0
 V6=TestKlasseStefan#Spieler#AssociationDirected####0#0#0
 =======
 V2=Risiko#Verwaltung#AssociationDirected####0#0#0
+<<<<<<< HEAD
 V3=Spieler#Gebiet#AssociationDirected####0#0#0
 V4=Spieler#Wuerfel#AssociationDirected####0#0#0
 V5=Spieler#Soldat#AssociationDirected####0#0#0
 V6=TestklasseAlex#Verwaltung#AssociationDirected####0#0#0
 >>>>>>> d11d780ba710c19a0759ffea007e5f453824e5b4
+=======
+V3=Risiko#Spieler#AssociationDirected####0#0#0
+V4=Spieler#Gebiet#AssociationDirected####0#0#0
+V5=Spieler#Wuerfel#AssociationDirected####0#0#0
+V6=Spieler#Soldat#AssociationDirected####0#0#0
+>>>>>>> AenderungenAnMainUndVerwaltung
 
 [Interactive]
 I0=
