@@ -10,9 +10,7 @@
 public class Verwaltung {
   
   // Anfang Attribute
-  private Spieler Angreifer;
-  private Spieler Verteidiger;
-  private Spieler HilfseigenschftZumSpielertausch;
+  private Spieler AktuellerSpieler;
   // Ende Attribute
   
   
@@ -38,7 +36,7 @@ public class Verwaltung {
   public void GebieteEinsammeln(Gebiet[] Gebiete) {
     
   }
-
+  
   
   //>>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
   public void GebieteVerteilen() {
@@ -47,10 +45,13 @@ public class Verwaltung {
   
   /**Bestimmt, wer als nächstes dran ist*/
   public void NaechstenSpielerBestimmen() {
-    this.HilfseigenschftZumSpielertausch=this.Angreifer;
-    this.Angreifer=this.Verteidiger;
-    this.Verteidiger=this.HilfseigenschftZumSpielertausch;  
+    if (AktuellerSpieler == Stefan) {
+      AktuellerSpieler=Alex;
+    }
+    else {
+      AktuellerSpieler=Stefan;
+    } // end of if
   }
-
+  
   // Ende Methoden
 } // end of Verwaltung
