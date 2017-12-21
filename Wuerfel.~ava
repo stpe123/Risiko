@@ -1,12 +1,13 @@
 /**
   *
-  * Implementierung eines Würfels
+  * Implementierung eines Würfels, bis zu drei Ergebnisse werden zurückgegeben
   *
   * @version 1.0 vom 20.12.2017
   * @Stefan
   */
 
-import java.util.Random;            //Zufallszahl (Würfel)
+
+import java.util.Random;
 
 public class Wuerfel {
   Random Wuerfel = new Random();

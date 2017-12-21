@@ -39,7 +39,7 @@ public class Spieler {
   
   public int angreifen() {
     //Dialog Box
-    JOptionPane.showMessageDialog(null, "Ich möchte angreifen.");
+    JOptionPane.showMessageDialog(null, "I am happy.");
     //Möchten Sie angreifen?
     //Eigenes Gebiet auswählen
     //Feindgebiet auswählen
