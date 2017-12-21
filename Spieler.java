@@ -59,7 +59,7 @@ public class Spieler {
   /**
   *Gibt einen Ineteger von 1 bis 6 zurück
   */
-  public void verteidigen() {
+  public int verteidigen() {
     Augenzahl1 = Wuerfel.getAugenzahl();
     return 6;
     
