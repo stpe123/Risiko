@@ -1,14 +1,25 @@
 [Files]
 File0=Gebiet.java
-File1=Soldat.java
-File2=Spieler.java
-File3=Verwaltung.java
-File4=Weltkarte.java
-File5=Wuerfel.java
+File1=Risiko.java
+File2=Soldat.java
+File3=Spieler.java
+File4=Verwaltung.java
+File5=Weltkarte.java
+File6=Wuerfel.java
 
 [Box:  - Gebiet]
 X=379
 Y=121
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Risiko]
+X=732
+Y=50
 MinVis=0
 ShowParameter=4
 SortOrder=0
