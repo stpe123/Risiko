@@ -90,7 +90,7 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=255
+OffsetX=0
 OffsetY=0
 Visibility=0
 ShowParameter=4

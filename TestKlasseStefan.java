@@ -23,6 +23,7 @@ public class TestKlasseStefan {
     m = Stefan.angreifen(); 
     System.out.println(m);
     
+    
   }
   
   // Ende Methoden

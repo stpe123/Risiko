@@ -19,7 +19,7 @@ public class Wuerfel {
   
   /**
   *Erwartet keinen Eingabewert
-  *Gibt einen Integer von 1 bis 6 zurück
+  Gibt einen Integer von 1 bis 6 zurück
   */
   public int getAugenzahl() {
     Augenzahl = 1 + Wuerfel.nextInt(6);
