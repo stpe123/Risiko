@@ -49,8 +49,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - TestKlasseStefan]
-X=927
-Y=130
+X=167
+Y=40
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -79,8 +79,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Wuerfel]
-X=1027
-Y=470
+X=710
+Y=627
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -90,7 +90,7 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=0
+OffsetX=255
 OffsetY=0
 Visibility=0
 ShowParameter=4

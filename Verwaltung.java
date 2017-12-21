@@ -15,10 +15,7 @@ public class Verwaltung {
   
   // Anfang Methoden
   public static void main(String[] args) {
-    
-    //Testumgebung Stefan
-    //TestKlasseStefan Stefan = new TestKlasseStefan();
-    //Stefan.KlassenTesten();
+
     
     
   }

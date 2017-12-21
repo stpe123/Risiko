@@ -16,6 +16,11 @@ public class Wuerfel {
   // Ende Attribute
   
   // Anfang Methoden
+  
+  /**
+  *Erwartet keinen Eingabewert
+  Gibt einen Integer von 1 bis 6 zurück
+  */
   public int getAugenzahl() {
     Augenzahl = 1 + Wuerfel.nextInt(6);
     return Augenzahl;
