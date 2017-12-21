@@ -34,6 +34,7 @@ public class TestKlasseStefan {
     System.out.println(m);
 >>>>>>> 84fe1baa9a9b3876e0c4dc33e96394fe2dd57115
     
+    
   }
   
   // Ende Methoden

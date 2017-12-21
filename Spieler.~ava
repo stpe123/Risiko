@@ -29,6 +29,7 @@ public class Spieler {
     this.Augenzahl3 = 0;
     this.Gebiet = null;
     this.Wuerfel = null;
+    Wuerfel Wuerfel = new Wuerfel();
   }
 
   
@@ -37,22 +38,37 @@ public class Spieler {
     return Name;
   }
   
+  /**
+  *Keine Eingabewerte
+  Uebergibt eine Zahl von 0 bis 6
+  0 == Spieler will nicht angreifen
+  sonst: Augenzahl des Wuerfels  
+  */
   public int angreifen() {
     //Dialog Box
-    JOptionPane.showMessageDialog(null, "I am happy.");
+    JOptionPane.showMessageDialog(null, "Ich möchte angreifen.");
     //Möchten Sie angreifen?
-    //Eigenes Gebiet auswählen
-    //Feindgebiet auswählen
-    //Würfeln
-    
-    return 0;
+              //Falls ja
+                      //Eigenes Gebiet auswählen
+                      //Feindgebiet auswählen
+                      //Würfeln
+              //Falls nein
+              return 0;
   }
 
-  
+  /**
+  *Gibt einen Ineteger von 1 bis 6 zurück
+  */
   public void verteidigen() {
+    Augenzahl1 = Wuerfel1.
+    return 6;
     
   }
   
+  /**
+  *Erwartet Soldaten als Eingabewert
+  Kein Rueckgabewert
+  */
   public void TruppenSetzen(Soldat Soldat) {
     
   }
@@ -69,6 +85,10 @@ public class Spieler {
     this.Gebiet = Gebiet;
   }
   
+  /**
+  *Loescht einen Soldaten auf dem aktuellen Kriegsgebiet
+  (Angreifer und Verteidiger)
+  */
   public void SoldatLoeschen(int Anzahl) {
     
   }
@@ -93,12 +113,6 @@ public class Spieler {
     return 0;
   }
   
-  private int Wuerfeln() {
-    Augenzahl1 = Wuerfel.getAugenzahl();
-    System.out.println(Augenzahl1);
-    
-    return 0;
-  }
   
   
   public int getAugenzahl1() {
