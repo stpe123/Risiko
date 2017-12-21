@@ -42,12 +42,12 @@ public class Verwaltung {
     
   }
   
-<<<<<<< HEAD
-=======
+  //<  <<<<<< HEAD
+  //=======
   private void GebieteEinsammeln() {
     
   }
 
->>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
+  //>>>>>>> ee344df410929aa7a0f159a1aada02aaabd3dbe8
   // Ende Methoden
 } // end of Verwaltung
