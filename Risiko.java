@@ -9,6 +9,9 @@
 public class Risiko {
   
   // Anfang Attribute
+  private Verwaltung VW;
+  private Spieler Alex;
+  private Spieler Stefan;
   // Ende Attribute
   
   // Anfang Methoden
