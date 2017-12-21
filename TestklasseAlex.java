@@ -6,17 +6,20 @@
   * @author 
   */
 
-public class TestklasseAlex {
+public class TestKlasseAlex {
   
   // Anfang Attribute
   private Verwaltung VW;
-  
   // Ende Attribute
   
   // Anfang Methoden
-  public void Testmethode() {
+  public Verwaltung getVW() {
+    return VW;
+  }
 
+  public void Testmethode() {
+    
   }
 
   // Ende Methoden
-} // end of TestklasseAlex
+} // end of TestKlasseAlex

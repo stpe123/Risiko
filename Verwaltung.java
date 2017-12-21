@@ -14,11 +14,6 @@ public class Verwaltung {
   
   
   // Anfang Methoden
-  public static void main(String[] args) {
-
-    
-    
-  }
   /**
   *Keine Übergabe- oder Rückgabeparameter*/
   private void GebieteMischen() {

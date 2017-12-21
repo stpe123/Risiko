@@ -6,17 +6,19 @@
   * @author 
   */
 
-public class TestklasseAlex {
+public class Risiko {
   
   // Anfang Attribute
   private Verwaltung VW;
-  
+  private Spieler Alex;
+  private Spieler Stefan;
+  private TestKlasseStefan TkStefan;
   // Ende Attribute
   
   // Anfang Methoden
-  public void Testmethode() {
-
+  public void main(String[] args) {
+    
   }
 
   // Ende Methoden
-} // end of TestklasseAlex
+} // end of Risiko
