@@ -6,16 +6,12 @@
   * @author 
   */
 
-public class Risiko {
+public class TestklasseAlex {
   
   // Anfang Attribute
   private Verwaltung VW;
   // Ende Attribute
   
   // Anfang Methoden
-  public void main(String[] args) {
-    
-  }
-
   // Ende Methoden
-} // end of Risiko
+} // end of TestklasseAlex
