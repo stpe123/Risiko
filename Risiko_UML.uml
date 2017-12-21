@@ -27,8 +27,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Spieler]
-X=532
-Y=338
+X=149
+Y=351
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -37,8 +37,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Verwaltung]
-X=946
-Y=45
+X=918
+Y=125
 MinVis=0
 ShowParameter=4
 SortOrder=0
