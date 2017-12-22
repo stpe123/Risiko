@@ -14,18 +14,25 @@ public class Verwaltung {
   // Ende Attribute
   
   
+  public Verwaltung() {
+    this.AktuellerSpieler = null;
+  }
+
   // Anfang Methoden
   /**
   *Keine Übergabe- oder Rückgabeparameter*/
   public void GebieteMischen() {
     
   }
-  /**Dies ist ein Test
+  /**Übergibt ein Array vom Typ Gebiet
+  Der Teilungsfaktor besagt, wie viele aller Gebiete abgegeben werden sollen.
+  1=alle, 2=Hälfte, 3= 1/3 aller Gebiete die sich in ihrem Speicher befinden.
   */
-  public Gebiet GebietAnSpielerUebergeben() {
+  public Gebiet[] GebieteAnSpielerUebergeben(int Teilungsfaktor) {
     
     return null;
   }
+
   
   
   public void WuerfelAugenzahlVergleichen() {
@@ -45,12 +52,12 @@ public class Verwaltung {
   
   /**Bestimmt, wer als nächstes dran ist*/
   public void NaechstenSpielerBestimmen() {
-    if (AktuellerSpieler == Stefan) {
-      AktuellerSpieler=Alex;
-    }
-    else {
-      AktuellerSpieler=Stefan;
-    } // end of if
+    //    if (AktuellerSpieler == Stefan) {
+//      AktuellerSpieler=Alex;
+//    }
+//    else {
+//      AktuellerSpieler=Stefan;
+//    } // end of if
   }
   
   // Ende Methoden
