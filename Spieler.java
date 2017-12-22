@@ -30,6 +30,7 @@ public class Spieler {
     this.Augenzahl3 = 0;
     this.Gebiet = null;
     this.Wuerfel = new Wuerfel();
+    this.Kriegsgebiet = new Kriegsgebiet();
   }
   
   
@@ -55,11 +56,12 @@ public class Spieler {
     null,
     options,
     options[1]);
+    System.out.print(angriff);
     // Ja: angriff == 1, Nein:angriff == 0;
     if (angriff == 1) {
       //    Würfeln
       this.Kriegsgebiet.setAugenzahl(this.Wuerfel.getAugenzahl()); 
-      //    Gebiet Auwählen, von dem aus angegriffen wird
+      //    Dialogbox: Gebiet Auwählen, von dem aus angegriffen wird
       Object[] EigeneGebiete = {"1", "2", "3"};
       String Angriffsgebiet = (String)JOptionPane.showInputDialog(
       null,
@@ -69,7 +71,7 @@ public class Spieler {
       null,
       EigeneGebiete,
       "1");
-      //    Kriegsgebiet Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
+      //    Dialogbox: Kriegsgebiet Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
       Object[] MoeglicheKriegsgebiete = {"4", "5", "6"};
       String KriegsgebietName = (String)JOptionPane.showInputDialog(
       null,
@@ -103,16 +105,14 @@ public class Spieler {
   *Erwartet Soldaten als Eingabewert
   Kein Rueckgabewert
   */
-  public void TruppenSetzen(Soldat Soldat) {
+  public void TruppenSetzen(Soldat[] Soldaten) {
     
   }
+
   
   public void TruppenBewegen() {
     
   }
-  
-  
-  
   /**
   *Loescht einen Soldaten auf dem aktuellen Kriegsgebiet
   (Angreifer und Verteidiger)
@@ -120,37 +120,17 @@ public class Spieler {
   public void SoldatLoeschen(int Anzahl) {
     
   }
-  
-  public void GebietAnwaehlen() {
-    
-  }
-
-  
-  public void FeindgebietAnwaehlen() {
-    
-  }
-  
   public void GebietAbgeben() {
     
   }
-  
   public void GebieteAnnehmen(Gebiet[] Gebiete) {
     
   }
-
-  
   public int AnzahlGebiete() {
     return 0;
-  }
-  
-  
-  
-  
-  
-  
+  }  
   public Gebiet getGebiet() {
     return Gebiet;
   }
-
   // Ende Methoden
 } // end of Spieler

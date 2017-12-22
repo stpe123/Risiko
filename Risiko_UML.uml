@@ -20,8 +20,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Kriegsgebiet]
-X=1287
-Y=177
+X=1320
+Y=153
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -101,8 +101,8 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=73
-OffsetY=124
+OffsetX=0
+OffsetY=0
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -115,15 +115,14 @@ ShowObjectDiagram=0
 [Connections]
 V0=Gebiet#Soldat#Aggregation####0#0#-1
 V1=Weltkarte#Gebiet#Composition####0#0#-1
-V2=PrivateTestKlasseStefan#Kriegsgebiet#AssociationDirected####0#0#0
-V3=Risiko#Verwaltung#AssociationDirected####0#0#0
-V4=Risiko#Spieler#AssociationDirected####0#0#0
-V5=Risiko#Weltkarte#AssociationDirected####0#0#0
-V6=Spieler#Gebiet#AssociationDirected####0#0#0
-V7=Spieler#Wuerfel#AssociationDirected####0#0#0
-V8=Spieler#Soldat#AssociationDirected####0#0#0
-V9=Spieler#Kriegsgebiet#AssociationDirected####0#0#0
-V10=Verwaltung#Spieler#AssociationDirected####0#0#0
+V2=Risiko#Verwaltung#AssociationDirected####0#0#0
+V3=Risiko#Spieler#AssociationDirected####0#0#0
+V4=Risiko#Weltkarte#AssociationDirected####0#0#0
+V5=Spieler#Gebiet#AssociationDirected####0#0#0
+V6=Spieler#Wuerfel#AssociationDirected####0#0#0
+V7=Spieler#Soldat#AssociationDirected####0#0#0
+V8=Spieler#Kriegsgebiet#AssociationDirected####0#0#0
+V9=Verwaltung#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
