@@ -101,8 +101,8 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=0
-OffsetY=188
+OffsetX=73
+OffsetY=124
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -115,7 +115,7 @@ ShowObjectDiagram=0
 [Connections]
 V0=Gebiet#Soldat#Aggregation####0#0#-1
 V1=Weltkarte#Gebiet#Composition####0#0#-1
-V2=Kriegsgebiet#Gebiet#AssociationDirected####0#0#0
+V2=PrivateTestKlasseStefan#Kriegsgebiet#AssociationDirected####0#0#0
 V3=Risiko#Verwaltung#AssociationDirected####0#0#0
 V4=Risiko#Spieler#AssociationDirected####0#0#0
 V5=Risiko#Weltkarte#AssociationDirected####0#0#0

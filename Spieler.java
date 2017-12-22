@@ -44,7 +44,7 @@ public class Spieler {
   Falls nicht angegriffen wird: Augenzahl == 0
   Kriegsgebiet == noone
   */
-  public int angreifen() {
+  public Kriegsgebiet angreifen() {
     //Dialog Box: "Möchten Sie angreifen"   
     Object[] options = {"Nein","Ja"};
     int angriff = JOptionPane.showOptionDialog(null,
@@ -55,32 +55,48 @@ public class Spieler {
     null,
     options,
     options[1]);
-    System.out.print(angriff);
     // Ja: angriff == 1, Nein:angriff == 0;
-    if (angriff) {
-      //    Angreifen  
+    if (angriff == 1) {
+      //    Würfeln
+      this.Kriegsgebiet.setAugenzahl(this.Wuerfel.getAugenzahl()); 
+      //    Gebiet Auwählen, von dem aus angegriffen wird
+      Object[] EigeneGebiete = {"1", "2", "3"};
+      String Angriffsgebiet = (String)JOptionPane.showInputDialog(
+      null,
+      "Von welchen Gebiet möchten Sie angreifen?",
+      "Angriff Starten",
+      JOptionPane.PLAIN_MESSAGE,
+      null,
+      EigeneGebiete,
+      "1");
+      //    Kriegsgebiet Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
+      Object[] MoeglicheKriegsgebiete = {"4", "5", "6"};
+      String KriegsgebietName = (String)JOptionPane.showInputDialog(
+      null,
+      "Welches Gebiet möchten Sie angreifen?",
+      "Kriegsgebiet auswählen",
+      JOptionPane.PLAIN_MESSAGE,
+      null,
+      MoeglicheKriegsgebiete,
+      "4");
+      this.Kriegsgebiet.setName(KriegsgebietName);
       
     } // end of if
     else {
-      //    Abbruch
+      //    Kein Angriff
       this.Kriegsgebiet.setAugenzahl(0);
-      this.Kriegsgebiet.getName("noone");  
+      this.Kriegsgebiet.setName("noone");
     } // end of if-else
-
-    //Falls ja
-    //Eigenes Gebiet auswählen
-    //Feindgebiet auswählen
-    //Würfeln
     return this.Kriegsgebiet;
   }
   
+  
   /**
   *Gibt einen Ineteger von 1 bis 6 zurück
-  */
+  */                                        
   public int verteidigen() {
-    Augenzahl1 = Wuerfel.getAugenzahl();
-    return 6;
-    
+    Augenzahl1 = this.Wuerfel.getAugenzahl();
+    return Augenzahl1; 
   }
   
   /**
@@ -95,13 +111,7 @@ public class Spieler {
     
   }
   
-  public Gebiet getGebiet() {
-    return Gebiet;
-  }
   
-  public void setGebiet(Gebiet Gebiet) {
-    this.Gebiet = Gebiet;
-  }
   
   /**
   *Loescht einen Soldaten auf dem aktuellen Kriegsgebiet
@@ -114,6 +124,7 @@ public class Spieler {
   public void GebietAnwaehlen() {
     
   }
+
   
   public void FeindgebietAnwaehlen() {
     
@@ -123,9 +134,10 @@ public class Spieler {
     
   }
   
-  public void GebietAnnehmen() {
+  public void GebieteAnnehmen(Gebiet[] Gebiete) {
     
   }
+
   
   public int AnzahlGebiete() {
     return 0;
@@ -133,17 +145,12 @@ public class Spieler {
   
   
   
-  public int getAugenzahl1() {
-    return Augenzahl1;
-  }
   
-  public int getAugenzahl2() {
-    return Augenzahl2;
-  }
   
-  public int getAugenzahl3() {
-    return Augenzahl3;
-  }
   
+  public Gebiet getGebiet() {
+    return Gebiet;
+  }
+
   // Ende Methoden
 } // end of Spieler
