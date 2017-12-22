@@ -28,9 +28,8 @@ public class Spieler {
     this.Augenzahl2 = 0;
     this.Augenzahl3 = 0;
     this.Gebiet = null;
-    this.Wuerfel = null;
-    Wuerfel Wuerfel = new Wuerfel();
-  }
+    this.Wuerfel = new Wuerfel();
+    }
 
   
   // Anfang Methoden
