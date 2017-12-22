@@ -5,6 +5,8 @@
   * @version 1.0 vom 21.12.2017
   * Stefan
   */
+  
+  //to do: siehe Konstruktor
 
 import javax.swing.JOptionPane;     //Dialogbox
 
@@ -14,17 +16,16 @@ public class Spieler {
   private String Name;
   private Gebiet Gebiet;
   private Wuerfel Wuerfel;
-  private Soldat Soldat;
-                         
+  private Kriegsgebiet Kriegsgebiet;                         
   private int Augenzahl1;
   private int Augenzahl2;
   private int Augenzahl3;
-  private Kriegsgebiet Kriegsgebiet;
   // Ende Attribute
   
+  //Konstruktor um Anfrage an Spieler erweitern: Wie heißt du
+  // -> neuer Konstruktor ohne Übergabeparameter erstellen
   public Spieler(String Name) {
     this.Name = Name;
-    this.Soldat = null;
     this.Augenzahl1 = 0;
     this.Augenzahl2 = 0;
     this.Augenzahl3 = 0;
@@ -108,20 +109,20 @@ public class Spieler {
   
   
   /**
-  *Gibt einen Ineteger von 1 bis 6 zurück
+  *Gibt einen Ineteger von 1 bis 6 zurück (Augenzahl des Würfels)
   */                                        
   public int verteidigen() {
-    Augenzahl1 = this.Wuerfel.getAugenzahl();
-    return Augenzahl1; 
+    return this.Wuerfel.getAugenzahl();
   }
   
   /**
-  *Erwartet Soldaten als Eingabewert
+  *Erwartet ein Array von Soldaten als Eingabewert
   Kein Rueckgabewert
   */
-  public void TruppenSetzen(Soldat[] Soldaten) {
+  public void TruppenSetzen(int Anzahl) {
     
   }
+  
   
   
   public void TruppenBewegen() {
@@ -131,7 +132,7 @@ public class Spieler {
   *Loescht einen Soldaten auf dem aktuellen Kriegsgebiet
   (Angreifer und Verteidiger)
   */
-  public void SoldatLoeschen(int Anzahl) {
+    public void SoldatLoeschen(int Anzahl) {
     
   }
   public void GebietAbgeben() {

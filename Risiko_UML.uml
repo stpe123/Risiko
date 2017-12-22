@@ -50,8 +50,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Soldat]
-X=382
-Y=651
+X=772
+Y=454
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -90,8 +90,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Wuerfel]
-X=1080
-Y=509
+X=1089
+Y=472
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -120,9 +120,8 @@ V3=Risiko#Spieler#AssociationDirected####0#0#0
 V4=Risiko#Weltkarte#AssociationDirected####0#0#0
 V5=Spieler#Gebiet#AssociationDirected####0#0#0
 V6=Spieler#Wuerfel#AssociationDirected####0#0#0
-V7=Spieler#Soldat#AssociationDirected####0#0#0
-V8=Spieler#Kriegsgebiet#AssociationDirected####0#0#0
-V9=Verwaltung#Spieler#AssociationDirected####0#0#0
+V7=Spieler#Kriegsgebiet#AssociationDirected####0#0#0
+V8=Verwaltung#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=

@@ -11,20 +11,15 @@ public class Gebiet {
   // Anfang Attribute
   private String Name;
   private String Nachbargebiete;
-  private Soldat Soldat;
+  private int AnzahlSoldaten;
   // Ende Attribute
   
   public Gebiet(Soldat Soldat, String Name, String Nachbargebiete) {
     this.Name = Name;
     this.Nachbargebiete = Nachbargebiete;
-    this.Soldat = Soldat;
   }
 
   // Anfang Methoden
-  public Soldat getSoldat() {
-    return Soldat;
-  }
-
   public void setSoldat() {
     
   }
@@ -39,6 +34,10 @@ public class Gebiet {
 
   public void getAnzahlSoldat() {
     
+  }
+
+  public int getAnzahlSoldaten() {
+    return AnzahlSoldaten;
   }
 
   // Ende Methoden
