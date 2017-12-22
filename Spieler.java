@@ -19,6 +19,7 @@ public class Spieler {
   private int Augenzahl1;
   private int Augenzahl2;
   private int Augenzahl3;
+  private Kriegsgebiet Kriegsgebiet;
   // Ende Attribute
   
   public Spieler(String Name) {
@@ -29,8 +30,8 @@ public class Spieler {
     this.Augenzahl3 = 0;
     this.Gebiet = null;
     this.Wuerfel = new Wuerfel();
-    }
-
+  }
+  
   
   // Anfang Methoden
   public String getName() {
@@ -44,17 +45,35 @@ public class Spieler {
   Kriegsgebiet == noone
   */
   public int angreifen() {
-    //Dialog Box
-    JOptionPane.showMessageDialog(null, "Ich möchte angreifen.");
-    //Möchten Sie angreifen?
-              //Falls ja
-                      //Eigenes Gebiet auswählen
-                      //Feindgebiet auswählen
-                      //Würfeln
-              //Falls nein
-              return 0;
-  }
+    //Dialog Box: "Möchten Sie angreifen"   
+    Object[] options = {"Nein","Ja"};
+    int angriff = JOptionPane.showOptionDialog(null,
+    "Möchten Sie angreifen",
+    "Anfrage: Angriff",
+    JOptionPane.YES_NO_OPTION,
+    JOptionPane.QUESTION_MESSAGE,
+    null,
+    options,
+    options[1]);
+    System.out.print(angriff);
+    // Ja: angriff == 1, Nein:angriff == 0;
+    if (angriff) {
+      //    Angreifen  
+      
+    } // end of if
+    else {
+      //    Abbruch
+      this.Kriegsgebiet.setAugenzahl(0);
+      this.Kriegsgebiet.getName("noone");  
+    } // end of if-else
 
+    //Falls ja
+    //Eigenes Gebiet auswählen
+    //Feindgebiet auswählen
+    //Würfeln
+    return this.Kriegsgebiet;
+  }
+  
   /**
   *Gibt einen Ineteger von 1 bis 6 zurück
   */

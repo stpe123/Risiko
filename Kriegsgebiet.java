@@ -10,7 +10,7 @@ public class Kriegsgebiet {
   
   // Anfang Attribute
   private int Augenzahl;
-  private Gebiet Gebiet;
+  private String Name;
   // Ende Attribute
   
   // Anfang Methoden
@@ -18,8 +18,16 @@ public class Kriegsgebiet {
     return Augenzahl;
   }
 
-  public Gebiet getGebiet() {
-    return Gebiet;
+  public void setAugenzahl(int Augenzahl) {
+    this.Augenzahl = Augenzahl;
+  }
+
+  public String getName() {
+    return Name;
+  }
+
+  public void setName(String Name) {
+    this.Name = Name;
   }
 
   // Ende Methoden

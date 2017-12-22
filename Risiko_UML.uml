@@ -1,12 +1,13 @@
 [Files]
 File0=Gebiet.java
-File1=PrivateTestKlasseStefan.java
-File2=Risiko.java
-File3=Soldat.java
-File4=Spieler.java
-File5=Verwaltung.java
-File6=Weltkarte.java
-File7=Wuerfel.java
+File1=Kriegsgebiet.java
+File2=PrivateTestKlasseStefan.java
+File3=Risiko.java
+File4=Soldat.java
+File5=Spieler.java
+File6=Verwaltung.java
+File7=Weltkarte.java
+File8=Wuerfel.java
 
 [Box:  - Gebiet]
 X=286
@@ -18,9 +19,19 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
+[Box:  - Kriegsgebiet]
+X=1287
+Y=177
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
 [Box:  - PrivateTestKlasseStefan]
-X=231
-Y=89
+X=166
+Y=74
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -79,8 +90,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Wuerfel]
-X=1377
-Y=685
+X=1080
+Y=509
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -91,7 +102,7 @@ FontName=MS Sans Serif
 [Diagram]
 comments=0
 OffsetX=0
-OffsetY=0
+OffsetY=188
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -104,13 +115,15 @@ ShowObjectDiagram=0
 [Connections]
 V0=Gebiet#Soldat#Aggregation####0#0#-1
 V1=Weltkarte#Gebiet#Composition####0#0#-1
-V2=Risiko#Verwaltung#AssociationDirected####0#0#0
-V3=Risiko#Spieler#AssociationDirected####0#0#0
-V4=Risiko#Weltkarte#AssociationDirected####0#0#0
-V5=Spieler#Gebiet#AssociationDirected####0#0#0
-V6=Spieler#Wuerfel#AssociationDirected####0#0#0
-V7=Spieler#Soldat#AssociationDirected####0#0#0
-V8=Verwaltung#Spieler#AssociationDirected####0#0#0
+V2=Kriegsgebiet#Gebiet#AssociationDirected####0#0#0
+V3=Risiko#Verwaltung#AssociationDirected####0#0#0
+V4=Risiko#Spieler#AssociationDirected####0#0#0
+V5=Risiko#Weltkarte#AssociationDirected####0#0#0
+V6=Spieler#Gebiet#AssociationDirected####0#0#0
+V7=Spieler#Wuerfel#AssociationDirected####0#0#0
+V8=Spieler#Soldat#AssociationDirected####0#0#0
+V9=Spieler#Kriegsgebiet#AssociationDirected####0#0#0
+V10=Verwaltung#Spieler#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
