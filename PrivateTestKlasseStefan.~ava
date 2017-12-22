@@ -26,6 +26,9 @@ public class PrivateTestKlasseStefan {
     System.out.print(KriegsgebietTest.getAugenzahl()); 
     System.out.print(KriegsgebietTest.getName());
     
+    //  TruppenSetzenTest
+    Stefan.TruppenSetzen(5);  
+    
   }
   
   
