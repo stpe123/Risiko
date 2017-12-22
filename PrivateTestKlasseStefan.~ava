@@ -1,0 +1,33 @@
+/**
+  *
+  * Beschreibung
+  *
+  * @version 1.0 vom 22.12.2017
+  * @author 
+  */
+
+public class PrivateTestKlasseStefan {
+  
+  // Anfang Attribute
+     int WuerfelTest;
+  // Ende Attribute
+  
+  // Anfang Methoden
+  public static void main(String[] args) {
+    
+    //    WuerfelTest
+    //    Wuerfel Wuerfel1 = new Wuerfel();
+//    System.out.print(Wuerfel1.getAugenzahl()); 
+    
+    //SpielerAngreifenTest
+    Spieler Stefan = new Spieler("Stefan");
+    Kriegsgebiet KriegsgebietTest = new Kriegsgebiet();
+    KriegsgebietTest = Stefan.angreifen();
+    System.out.print(KriegsgebietTest.getAugenzahl()); 
+    System.out.print(KriegsgebietTest.getName());
+    
+  }
+  
+  
+  // Ende Methoden
+} // end of PrivateTestKlasseStefan

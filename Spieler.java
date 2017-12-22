@@ -41,9 +41,10 @@ public class Spieler {
   
   /**
   *Keine Eingabewerte
-  Ein Objekt wird zurückgegeben: Kriegsgebiet und Augenzahl des Würfels als Atribute
+  Ein Objekt wird zurückgegeben: Kriegsgebiet und Augenzahl des Würfels als Attribute
   Falls nicht angegriffen wird: Augenzahl == 0
   Kriegsgebiet == noone
+  Zurzeit werden für Kriegsgebiet.Name Zahlen übergeben
   */
   public Kriegsgebiet angreifen() {
     //Dialog Box: "Möchten Sie angreifen"   
@@ -56,7 +57,7 @@ public class Spieler {
     null,
     options,
     options[1]);
-    System.out.print(angriff);
+    //System.out.print(angriff);
     // Ja: angriff == 1, Nein:angriff == 0;
     if (angriff == 1) {
       //    Würfeln
@@ -71,6 +72,12 @@ public class Spieler {
       null,
       EigeneGebiete,
       "1");
+      if (Angriffsgebiet == null) {
+        //      Angriff abgebrochen  
+        this.Kriegsgebiet.setAugenzahl(0);
+        this.Kriegsgebiet.setName("noone");
+        return this.Kriegsgebiet;
+      } // end of if
       //    Dialogbox: Kriegsgebiet Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
       Object[] MoeglicheKriegsgebiete = {"4", "5", "6"};
       String KriegsgebietName = (String)JOptionPane.showInputDialog(
@@ -81,15 +88,22 @@ public class Spieler {
       null,
       MoeglicheKriegsgebiete,
       "4");
+      if (KriegsgebietName == null) {
+        //      Angriff abgebrochen  
+        this.Kriegsgebiet.setAugenzahl(0);
+        this.Kriegsgebiet.setName("noone");
+        return this.Kriegsgebiet;
+      } // end of if
       this.Kriegsgebiet.setName(KriegsgebietName);
-      
+      return this.Kriegsgebiet;
     } // end of if
     else {
       //    Kein Angriff
       this.Kriegsgebiet.setAugenzahl(0);
       this.Kriegsgebiet.setName("noone");
+      return this.Kriegsgebiet;
     } // end of if-else
-    return this.Kriegsgebiet;
+    
   }
   
   
@@ -108,7 +122,7 @@ public class Spieler {
   public void TruppenSetzen(Soldat[] Soldaten) {
     
   }
-
+  
   
   public void TruppenBewegen() {
     
