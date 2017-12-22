@@ -12,8 +12,6 @@ public class Risiko {
   private Verwaltung VW;
   private Spieler Alex;
   private Spieler Stefan;
-  private TestKlasseStefan TkStefan;
-  private TestKlasseAlex TkAlex;
   private Weltkarte Erde;
   // Ende Attribute
   
