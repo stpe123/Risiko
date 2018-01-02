@@ -5,18 +5,44 @@
   * @version 1.0 vom 22.11.2017
   * @author 
   */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.imageio.ImageIO;
 
-public class Weltkarte {
+public class Weltkarte extends JFrame{
   
   // Anfang Attribute
   private Gebiet[] Gebiete;
   // Ende Attribute
   
+  public Weltkarte() {
+    this.Gebiete = null;
+    setSize(1200, 800);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setContentPane(new BackGroundPane("Weltkarte.JPG"));
+    
+    JPanel panel = (JPanel) getContentPane();
+    panel.setLayout(null);
+    
+    
+    JLabel label = new JLabel("20");
+    panel.add (label);
+    Dimension size = label.getPreferredSize();
+    label.setBounds(200, 250, 30, 30);
+    label.setFont(label.getFont().deriveFont(25f));
+    label.setForeground(Color.blue);
+    
+    
+    setVisible(true);
+  }
+  
   // Anfang Methoden
   public Gebiet[] getGebiete() {
     return Gebiete;
   }
-
-
+  
+  
   // Ende Methoden
 } // end of Weltkarte

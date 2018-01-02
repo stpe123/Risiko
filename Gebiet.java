@@ -5,8 +5,13 @@
   * @version 1.0 vom 17.11.2017
   * @author 
   */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.imageio.ImageIO;
 
-public class Gebiet {
+public class Gebiet extends JLabel{
   
   // Anfang Attribute
   private String Name;
@@ -14,31 +19,30 @@ public class Gebiet {
   private int AnzahlSoldaten;
   // Ende Attribute
   
-  public Gebiet(Soldat Soldat, String Name, String Nachbargebiete) {
+  public Gebiet(String Name, String Nachbargebiete, int xKoordinate, int yKoordinate) {
     this.Name = Name;
     this.Nachbargebiete = Nachbargebiete;
+    this.setFont(this.getFont().deriveFont(25f));
+    this.setBounds(xKoordinate, yKoordinate, 30, 30);
   }
-
+  
   // Anfang Methoden
   public void setSoldat() {
     
   }
-
+  
   public void getNachbargebiete() {
     
   }
-
-  public void getName() {
-    
-  }
-
+  
+  
   public void getAnzahlSoldat() {
     
   }
-
+  
   public int getAnzahlSoldaten() {
     return AnzahlSoldaten;
   }
-
+  
   // Ende Methoden
 } // end of Gebiet

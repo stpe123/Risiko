@@ -22,6 +22,7 @@ public class Risiko {
     Spieler AktuellerSpieler= new Spieler("AktuellerSpieler");
     Verwaltung VW = new Verwaltung(Spieler1,Spieler2);
     Weltkarte Erde = new Weltkarte();
+    //Testframe test = new Testframe("Risiko");
     
     
     VW.GebieteEinsammeln(Erde.getGebiete());
