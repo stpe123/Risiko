@@ -1,6 +1,6 @@
 [Files]
-File0=BackGroundPane.java
-File1=Gebiet.java
+File0=Gebiet.java
+File1=Kartenmischer.java
 File2=Kriegsgebiet.java
 File3=Risiko.java
 File4=Spieler.java
@@ -8,9 +8,9 @@ File5=Verwaltung.java
 File6=Weltkarte.java
 File7=Wuerfel.java
 
-[Box:  - BackGroundPane]
-X=74
-Y=227
+[Box:  - Gebiet]
+X=235
+Y=455
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -18,9 +18,9 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-[Box:  - Gebiet]
-X=235
-Y=455
+[Box:  - Kartenmischer]
+X=431
+Y=172
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -91,7 +91,7 @@ FontName=MS Sans Serif
 [Diagram]
 comments=0
 OffsetX=0
-OffsetY=221
+OffsetY=0
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -107,13 +107,21 @@ V1=Spieler#Gebiet#Aggregation####0#0#0
 V2=Spieler#Wuerfel#AssociationDirected####0#0#0
 V3=Spieler#Kriegsgebiet#AssociationDirected####0#0#0
 V4=Verwaltung#Spieler#AssociationDirected####0#0#0
+V5=Verwaltung#Gebiet#Aggregation####0#0#0
+V6=Verwaltung#Kartenmischer#AssociationDirected####0#0#0
 
 [Interactive]
 I0=
 
 [Window]
 Left=-8
-Top=-31
+<<<<<<< HEAD
+Top=-30
 Width=1382
-Height=453
+Height=533
+=======
+Top=-143
+Width=1382
+Height=626
+>>>>>>> 1900987921af10dc0a07fe272ad8e9cda66e5d51
 

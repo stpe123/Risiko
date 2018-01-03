@@ -10,17 +10,19 @@
 public class Verwaltung {
   
   // Anfang Attribute
+  Spieler[] spieler;
   private Spieler AktuellerSpieler;
-  private Spieler Spieler1;
-  private Spieler Spieler2;
+  //private Spieler Spieler1;
+  //private Spieler Spieler2;
   // Ende Attribute
   
   
-  public Verwaltung(Spieler Spieler1, Spieler Spieler2) {
-    this.Spieler1 = Spieler1;
-    this.Spieler2 = Spieler2;
+  public Verwaltung(Spieler[] spieler) {
+    this.spieler = spieler;
+    this.AktuellerSpieler = null;
+    //this.Spieler1 = null;
   }
-
+  
   // Anfang Methoden
   /**
   *Keine Übergabe- oder Rückgabeparameter*/
@@ -35,7 +37,7 @@ public class Verwaltung {
     
     return null;
   }
-
+  
   
   
   public void WuerfelAugenzahlVergleichen() {
@@ -57,7 +59,7 @@ public class Verwaltung {
   public Spieler NaechstenSpielerBestimmen() {
     return null;
   }
-
+  
   
   // Ende Methoden
 } // end of Verwaltung

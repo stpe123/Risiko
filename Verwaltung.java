@@ -9,24 +9,37 @@
 
 public class Verwaltung {
   
-  // Anfang Attribute
+  // Anfang Attribute*****************************************************************
+  private Spieler[] spieler;
+  private Gebiet[] Gebiete;
+  private Kartenmischer Mischer = new Kartenmischer();
   private Spieler AktuellerSpieler;
-  private Spieler Spieler1;
-  private Spieler Spieler2;
+  private int ErlaubteTruppenzahlInInitialisierungsphase = 10;
   // Ende Attribute
   
   
-  public Verwaltung(Spieler Spieler1, Spieler Spieler2) {
-    this.Spieler1 = Spieler1;
-    this.Spieler2 = Spieler2;
+  
+  
+  
+  //Konstruktor***********************************************************************
+  public Verwaltung(Spieler[] spieler) {
+    this.spieler = spieler;
+    this.AktuellerSpieler = null;
   }
-
-  // Anfang Methoden
+  
+  
+  
+  
+  
+  
+  // Anfang Methoden******************************************************************
   /**
   *Keine Übergabe- oder Rückgabeparameter*/
   public void GebieteMischen() {
-    
+    this.Gebiete = Mischer.mischen(this.Gebiete);
   }
+  
+  
   /**Übergibt ein Array vom Typ Gebiet
   Der Teilungsfaktor besagt, wie viele aller Gebiete abgegeben werden sollen.
   1=alle, 2=Hälfte, 3= 1/3 usw. aller Gebiete die sich in ihrem Speicher befinden.
@@ -35,7 +48,7 @@ public class Verwaltung {
     
     return null;
   }
-
+  
   
   
   public void WuerfelAugenzahlVergleichen() {
@@ -44,7 +57,7 @@ public class Verwaltung {
   
   /**Erwartet ein Array mit Gebietsobjekten*/
   public void GebieteEinsammeln(Gebiet[] Gebiete) {
-    
+    this.Gebiete = Gebiete;
   }
   
   
@@ -57,7 +70,20 @@ public class Verwaltung {
   public Spieler NaechstenSpielerBestimmen() {
     return null;
   }
-
+  
+  
+  public int getErlaubteTruppenzahlInInitialisierungsphase() {
+    return ErlaubteTruppenzahlInInitialisierungsphase;
+  }
+  
+  public void GebieteGleichmaessigAnSpielerVerteilen() {
+    //    for ( int i = 0; i < spieler.length; i++ ){
+//      if ( i == spieler.length-1 ) {
+//        spieler[i].GebieteAnnehmen(this.GebieteUebergeben(Gebiete.length/spieler.length));        
+//      } // end of if      
+//      spieler[i].GebieteAnnehmen(this.GebieteUebergeben(Gebiete.length/spieler.length));
+//    }
+  }
   
   // Ende Methoden
 } // end of Verwaltung

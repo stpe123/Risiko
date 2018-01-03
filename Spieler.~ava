@@ -7,30 +7,27 @@
   */
   
   //to do: siehe Konstruktor
-  //Array mit EigeneGebiete erstellen  
+  //       Array mit EigeneGebiete erstellen  
 
-import javax.swing.JOptionPane;     //Dialogbox
+import javax.swing.JOptionPane;     //Dialogbox    
+import java.util.*;                 //ArrayList benutzen
 
 public class Spieler {
   
   // Anfang Attribute
   private String Name;
-  private Gebiet[] Gebiet;
+  private ArrayList<Gebiet> MeineGebiete;
   private Wuerfel Wuerfel;
-  private Kriegsgebiet Kriegsgebiet;                         
-  private int Augenzahl1;
-  private int Augenzahl2;
-  private int Augenzahl3;
+  private Kriegsgebiet Kriegsgebiet;                        
   // Ende Attribute
   
-  //Konstruktor um Anfrage an Spieler erweitern: Wie heißt du
+  //ArrayList<String> einkaufsListe = new ArrayList<>();                                                      
+  
+  //Konstruktor um Anfrage an Spieler erweitern: Wie heißt du?
   // -> neuer Konstruktor ohne Übergabeparameter erstellen
   public Spieler(String Name) {
     this.Name = Name;
-    this.Augenzahl1 = 0;
-    this.Augenzahl2 = 0;
-    this.Augenzahl3 = 0;
-    this.Gebiet = null;
+    this.MeineGebiete = new ArrayList<>();
     this.Wuerfel = new Wuerfel();
     this.Kriegsgebiet = new Kriegsgebiet();
   }
@@ -64,11 +61,11 @@ public class Spieler {
     if (angriff == 1) {
       //    Würfeln
       this.Kriegsgebiet.setAugenzahl(this.Wuerfel.getAugenzahl()); 
-      //    Dialogbox: Gebiet Auwählen, von dem aus angegriffen wird
+      //    Dialogbox: MeineGebiete Auwählen, von dem aus angegriffen wird
       Object[] EigeneGebiete = {"1", "2", "3"};
       String Angriffsgebiet = (String)JOptionPane.showInputDialog(
       null,
-      "Von welchen Gebiet möchten Sie angreifen?",
+      "Von welchen MeineGebiete möchten Sie angreifen?",
       "Angriff Starten",
       JOptionPane.PLAIN_MESSAGE,
       null,
@@ -84,7 +81,7 @@ public class Spieler {
       Object[] MoeglicheKriegsgebiete = {"4", "5", "6"};
       String KriegsgebietName = (String)JOptionPane.showInputDialog(
       null,
-      "Welches Gebiet möchten Sie angreifen?",
+      "Welches MeineGebiete möchten Sie angreifen?",
       "Kriegsgebiet auswählen",
       JOptionPane.PLAIN_MESSAGE,
       null,
@@ -121,11 +118,11 @@ public class Spieler {
   Kein Rueckgabewert
   */
   public void TruppenSetzen(int Anzahl) {
-    //  Dialogbox: auf welchem Gebiet möchten Sie Truppen setzen?
+    //  Dialogbox: auf welchem MeineGebiete möchten Sie Truppen setzen?
     Object[] EigeneGebiete = {"1", "2", "3"};
     String GebietTruppenSetzen = (String)JOptionPane.showInputDialog(
     null,
-    "Auf welches Gebiet möchten Sie Soldaten setzen?",
+    "Auf welches MeineGebiete möchten Sie Soldaten setzen?",
     "Soldaten setzen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -135,7 +132,7 @@ public class Spieler {
       //      TruppenSetzen abgebrochen  
     } // end of if 
     else {
-      //    Anzahl der Soldaten auf dem Gebiet
+      //    Anzahl der Soldaten auf dem MeineGebiete
       Object[] AnzahlSoldatenSetzen = {"1", "2", "3","4", "5", "6", "7", "8", "9"};
       String AuswahlAnzahlSoldatenSetzen = (String)JOptionPane.showInputDialog(
       null,
@@ -149,7 +146,7 @@ public class Spieler {
         //    Soldatensetzen abgebrochen      
       } // end of if
       else {
-        //    in Array von Eigene Gebiet nach GebietTruppenSetzen suchen und Anzahl Soldaten um 
+        //    in Array von Eigene MeineGebiete nach GebietTruppenSetzen suchen und Anzahl Soldaten um 
         //    AuswahlAnzahlSoldatenSetzen erhöhen     
       } // end of if-else
     } // end of if-else
@@ -157,29 +154,46 @@ public class Spieler {
   }
   
   
-  
+  /**
+  *Gibt dem Spieler die Möglichkeit, Truppen von einem Gebiet zu einem Nachbargebiet zu
+  bewegen, wenn dieses nicht feindlich besetzt ist.
+  Ohne Eingabe-/Rückgabewerte.
+  */
   public void TruppenBewegen() {
     
   }
   /**
   *Loescht einen Soldaten auf dem aktuellen Kriegsgebiet
-  (Angreifer und Verteidiger)
   */
   public void SoldatLoeschen(int Anzahl) {
     
   }
-  public void GebietAbgeben() {
+  /**
+  *An wen soll das Gebiet abgegeben werden, Verwaltung oder Gegner?
+  Gibt ein Gebiet zurück und entfernt das übergebene Gebiet aus "MeineGebiete".
+  */
+  public Gebiet GebietAbgeben() {
+    return null;
+    
     
   }
-  public void GebieteAnnehmen(Gebiet[] Gebiet) {
+  /**
+  *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
+  */
+  public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
+    for (int i = 0;i<GebieteAnSpieler.size();i++){
+      
+    }
     
   }
+  
   public int AnzahlGebiete() {
     return 0;
   }  
-  public Gebiet[] getGebiet() {
-    return Gebiet;
+  public ArrayList getMeineGebiete() {
+    return MeineGebiete;
   }
+  
   
   // Ende Methoden
 } // end of Spieler

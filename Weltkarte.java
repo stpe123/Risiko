@@ -13,32 +13,40 @@ import javax.imageio.ImageIO;
 
 public class Weltkarte extends JFrame{
   
-  // Anfang Attribute
+  // Anfang Attribute***************************************************************
   private Gebiet[] Gebiete = new Gebiet[3];
   // Ende Attribute
   
+  
+  
+  
+  //Konstruktor*********************************************************************
   public Weltkarte() {
     
+    //Einstellungen für das Fenster
     setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setContentPane(new BackGroundPane("Weltkarte.JPG"));
     
+    //Panel, um Labels anzeigen zu können
     JPanel panel = (JPanel) getContentPane();
     panel.setLayout(null);
     
-    //    Gebiet[] Gebiete = new Gebiet[3];
+    //Anlegen aller Gebiete in einem Array
     Gebiete[0]= new Gebiet("Russland","Polen",580,250);
     Gebiete[1]= new Gebiet("Deutschland","Frankreich",730,200);
     Gebiete[2]= new Gebiet("Amerika","Brasilien",180,230);
     
+    //Gebiete auf der Karte anzeigen
     for ( int i = 0; i < Gebiete.length; i++ ){
       panel.add (Gebiete[i]);
     }
     
-    
+    //Farbeinstellungen für die Gebiete
     Gebiete[0].setForeground(Color.green);
     Gebiete[1].setForeground(Color.red);
     Gebiete[2].setForeground(Color.red);
+    
     
     Gebiete[0].setText("15");
     Gebiete[1].setText("8");
@@ -49,7 +57,12 @@ public class Weltkarte extends JFrame{
     this.Gebiete = null;
   }
   
-  // Anfang Methoden
+  
+  
+  
+  
+  
+  // Anfang Methoden*******************************************************************
   public Gebiet[] getGebiete() {
     return Gebiete;
   }

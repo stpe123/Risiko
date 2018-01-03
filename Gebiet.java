@@ -13,12 +13,17 @@ import javax.imageio.ImageIO;
 
 public class Gebiet extends JLabel{
   
-  // Anfang Attribute
+  // Attribute*************************************************************************
   private String Name;
   private String Nachbargebiete;
   private int AnzahlSoldaten;
   // Ende Attribute
   
+  
+  
+  
+  
+  //Konstruktor************************************************************************
   public Gebiet(String Name, String Nachbargebiete, int xKoordinate, int yKoordinate) {
     this.Name = Name;
     this.Nachbargebiete = Nachbargebiete;
@@ -26,7 +31,10 @@ public class Gebiet extends JLabel{
     this.setBounds(xKoordinate, yKoordinate, 30, 30);
   }
   
-  // Anfang Methoden
+  
+  
+  
+  // Anfang Methoden*******************************************************************
   public void setSoldat() {
     
   }
