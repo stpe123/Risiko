@@ -6,33 +6,42 @@
   * @author 
   */
 
+  import java.util.*;
+  
+  
 public class Risiko {
   
   // Anfang Attribute
-  //private Weltkarte Erde;
-  //private Spieler AktuellerSpieler;
+  
   // Ende Attribute
   
   // Anfang Methoden
   public static void main(String[] args) {
     
     //********************************Initialisierungsphase*********************************************************
-    Spieler[] spieler = new Spieler[2];
-    spieler[0] = new Spieler("Stefan");
-    spieler[1] = new Spieler("Alex");
+    //Alle Objekte anlegen
+    ArrayList<Spieler> spieler = new ArrayList<>();
+    spieler.add (new Spieler("Stefan"));
+    spieler.add (new Spieler("Alex"));
+    
     Spieler AktuellerSpieler;
     Verwaltung VW = new Verwaltung(spieler);
     Weltkarte Erde = new Weltkarte();    
     
-    //Verwaltung nimmt die Gebietskarten an sich
+    //Verwaltung verteilt die Gebietskarten an Spieler
     VW.GebieteEinsammeln(Erde.getGebiete());
     VW.GebieteMischen();
+    VW.GebieteAnSpielerVerteilen();
     
-    spieler[0].GebieteAnnehmen(VW.GebieteUebergeben(2));
-    spieler[1].GebieteAnnehmen(VW.GebieteUebergeben(1));
+    //Jeder darf eine feste Anzahl an Soldaten verteilen
+    for (ListIterator<Spieler> li = spieler.listIterator(0); li.hasNext();){
+      li.next().TruppenSetzen(10);
+    }
     
-    spieler[0].TruppenSetzen(10);
-    spieler[1].TruppenSetzen(10);
+    
+    
+    
+    
     
     
     

@@ -10,47 +10,61 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.imageio.ImageIO;
+import java.util.*;
 
 public class Weltkarte extends JFrame{
   
-  // Anfang Attribute
-  private Gebiet[] Gebiete = new Gebiet[3];
+  // Anfang Attribute***************************************************************
+  private ArrayList<Gebiet> Gebiete = new ArrayList<>();
   // Ende Attribute
   
+  
+  
+  
+  //Konstruktor*********************************************************************
   public Weltkarte() {
     
-    setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
+    //Einstellungen für das Fenster
+    setBounds(100,100,900,600);
+    //setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setContentPane(new BackGroundPane("Weltkarte.JPG"));
     
+    //Panel, um Labels anzeigen zu können
     JPanel panel = (JPanel) getContentPane();
     panel.setLayout(null);
     
-    //    Gebiet[] Gebiete = new Gebiet[3];
-    Gebiete[0]= new Gebiet("Russland","Polen",580,250);
-    Gebiete[1]= new Gebiet("Deutschland","Frankreich",730,200);
-    Gebiete[2]= new Gebiet("Amerika","Brasilien",180,230);
+    //Anlegen aller Gebiete in einer Arraylist
+    this.Gebiete.add (new Gebiet("Russland","Polen",580,250));
+    this.Gebiete.add (new Gebiet("Deutschland","Frankreich",730,200));
+    this.Gebiete.add (new Gebiet("Amerika","Brasilien",180,230));   
     
-    for ( int i = 0; i < Gebiete.length; i++ ){
-      panel.add (Gebiete[i]);
+    //Gebiete auf der Karte anzeigen
+    for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){
+      panel.add (li.next());
     }
     
+    //Farbeinstellungen für die Gebiete
+    Gebiete.get(0).setForeground(Color.green);
+    Gebiete.get(1).setForeground(Color.red);
+    Gebiete.get(2).setForeground(Color.red);
     
-    Gebiete[0].setForeground(Color.green);
-    Gebiete[1].setForeground(Color.red);
-    Gebiete[2].setForeground(Color.red);
     
-    Gebiete[0].setText("15");
-    Gebiete[1].setText("8");
-    Gebiete[2].setText("12");
+    Gebiete.get(0).setText("15");
+    Gebiete.get(1).setText("8");
+    Gebiete.get(2).setText("12");
     
     
     setVisible(true);
-    this.Gebiete = null;
   }
   
-  // Anfang Methoden
-  public Gebiet[] getGebiete() {
+  
+  
+  
+  
+  
+  // Anfang Methoden*******************************************************************
+  public ArrayList<Gebiet> getGebiete() {
     return Gebiete;
   }
   

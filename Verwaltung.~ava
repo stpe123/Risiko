@@ -5,30 +5,40 @@
   * @version 1.0 vom 17.11.2017
   * @author 
   */
-
+import java.util.*;
 
 public class Verwaltung {
   
-  // Anfang Attribute
-  Spieler[] spieler;
+  // Anfang Attribute*****************************************************************
+  private ArrayList<Spieler> spieler = new ArrayList<>();
+  private ArrayList<Gebiet> Gebiete = new ArrayList<>();
   private Spieler AktuellerSpieler;
-  //private Spieler Spieler1;
-  //private Spieler Spieler2;
+  private int ErlaubteTruppenzahlInInitialisierungsphase = 10;
   // Ende Attribute
   
   
-  public Verwaltung(Spieler[] spieler) {
-    this.spieler = spieler;
+  
+  
+  
+  //Konstruktor***********************************************************************
+  public Verwaltung(ArrayList<Spieler> spieler) {
+    this.spieler.addAll (spieler);
     this.AktuellerSpieler = null;
-    //this.Spieler1 = null;
   }
   
-  // Anfang Methoden
+  
+  
+  
+  
+  
+  // Anfang Methoden******************************************************************
   /**
   *Keine Übergabe- oder Rückgabeparameter*/
   public void GebieteMischen() {
-    
+    Collections.shuffle(this.Gebiete);
   }
+  
+  
   /**Übergibt ein Array vom Typ Gebiet
   Der Teilungsfaktor besagt, wie viele aller Gebiete abgegeben werden sollen.
   1=alle, 2=Hälfte, 3= 1/3 usw. aller Gebiete die sich in ihrem Speicher befinden.
@@ -45,8 +55,8 @@ public class Verwaltung {
   }
   
   /**Erwartet ein Array mit Gebietsobjekten*/
-  public void GebieteEinsammeln(Gebiet[] Gebiete) {
-    
+  public void GebieteEinsammeln(ArrayList<Gebiet> Gebiete) {
+    this.Gebiete.addAll(Gebiete);
   }
   
   
@@ -60,6 +70,25 @@ public class Verwaltung {
     return null;
   }
   
+  
+  public int getErlaubteTruppenzahlInInitialisierungsphase() {
+    return ErlaubteTruppenzahlInInitialisierungsphase;
+  }
+  
+  public void GebieteAnSpielerVerteilen() {
+    ArrayList<Gebiet> tmpGebiet = new ArrayList<>();
+    ListIterator<Spieler> SpielerIterator = spieler.listIterator(0);
+    
+    for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){
+      if (SpielerIterator.hasNext()) {
+        tmpGebiet.add(li.next());
+        SpielerIterator.next().GebieteAnnehmen(tmpGebiet); 
+      }
+      else{
+        spieler.listIterator(0);
+      }
+    }
+  }
   
   // Ende Methoden
 } // end of Verwaltung
