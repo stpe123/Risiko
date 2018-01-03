@@ -116,6 +116,7 @@ I0=
 [Window]
 Left=-8
 <<<<<<< HEAD
+<<<<<<< HEAD
 Top=-30
 Width=1382
 Height=533
@@ -124,4 +125,9 @@ Top=-143
 Width=1382
 Height=626
 >>>>>>> 1900987921af10dc0a07fe272ad8e9cda66e5d51
+=======
+Top=-143
+Width=1382
+Height=626
+>>>>>>> 04d3fb95080637b0b32cc57bde6b8472d9fc459e
 
