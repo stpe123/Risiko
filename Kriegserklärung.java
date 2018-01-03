@@ -6,7 +6,7 @@
   * @author 
   */
 
-public class Kriegsgebiet {
+public class Kriegserklärung {
   
   // Anfang Attribute
   private int Augenzahl;
