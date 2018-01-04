@@ -12,7 +12,7 @@
 public class Risiko {
   
   // Anfang Attribute
-  
+  Kriegserklaerung Kriegserkl;
   // Ende Attribute
   
   // Anfang Methoden
@@ -48,7 +48,12 @@ public class Risiko {
     
     //****************************Das Spiel beginnt***************************************************************
     AktuellerSpieler=VW.NaechstenSpielerBestimmen();
+    
     AktuellerSpieler.TruppenSetzen(3);
+    while(AktuellerSpieler.MoechtenSieAngreifen()) {
+      //Kriegserkl=AktuellerSpieler.angreifen();
+    }
+    
     
     
   }

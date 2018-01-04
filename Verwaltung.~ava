@@ -13,6 +13,7 @@ public class Verwaltung {
   private ArrayList<Spieler> spieler = new ArrayList<>();
   private ArrayList<Gebiet> Gebiete = new ArrayList<>();
   private Spieler AktuellerSpieler;
+  private int SpielerIndex = 0;
   private int ErlaubteTruppenzahlInInitialisierungsphase = 10;
   // Ende Attribute
   
@@ -69,7 +70,11 @@ public class Verwaltung {
   
   /**Bestimmt, wer als nächstes dran ist*/
   public Spieler NaechstenSpielerBestimmen() {
-    return null;
+    if (spieler.size() <= SpielerIndex) {
+      SpielerIndex=0;
+    } // end of if
+    return spieler.get(SpielerIndex++);
+    
   }
   
   
