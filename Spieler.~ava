@@ -115,10 +115,13 @@ public class Spieler {
   Kein Rueckgabewert.
   */
   public void TruppenSetzen(int Anzahl) {
+    //Namen der Gebiete des Spielers in einer Liste speichern
     ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
-    
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+    }  
     //  Dialogbox: auf welchem Gebiet möchten Sie Truppen setzen?
-    Object[] EigeneGebiete = {"1", "2", "3"};
+    Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String GebietTruppenSetzen = (String)JOptionPane.showInputDialog(
     null,
     "Auf welches Gebiet möchten Sie Soldaten setzen?",
@@ -130,27 +133,43 @@ public class Spieler {
     if (GebietTruppenSetzen == null) {
       //      TruppenSetzen abgebrochen  
     } // end of if 
-    else {
-      //    Anzahl der Soldaten auf dem MeineGebiete
-      Object[] AnzahlSoldatenSetzen = {"1", "2", "3","4", "5", "6", "7", "8", "9"};
-      String AuswahlAnzahlSoldatenSetzen = (String)JOptionPane.showInputDialog(
-      null,
-      "Wieviele Soldaten möchten Sie setzen?",
-      "Soldaten setzen",
-      JOptionPane.PLAIN_MESSAGE,
-      null,
-      AnzahlSoldatenSetzen,
-      "1");  
-      if (AuswahlAnzahlSoldatenSetzen == null) {
-        //    Soldatensetzen abgebrochen      
-      } // end of if
-      else {
-        //    in Array von Eigene MeineGebiete nach GebietTruppenSetzen suchen und Anzahl Soldaten um 
-        //    AuswahlAnzahlSoldatenSetzen erhöhen     
-      } // end of if-else
-    } // end of if-else
     
+    //    Anzahl der Soldaten auf dem MeineGebiete
+    Object [] AnzahlSoldatenSetzen = new Object[Anzahl]; 
+    for (int j = 0; j<AnzahlSoldatenSetzen.length ;j++ ) {
+      AnzahlSoldatenSetzen[j] = j+1;                   //Java beginnt bei "0" an zu Zählen        
+    } // end of for
+    String AuswahlAnzahlSoldatenSetzen = (String)JOptionPane.showInputDialog(
+    null,
+    "Wieviele Soldaten möchten Sie setzen?",
+    "Soldaten setzen",
+    JOptionPane.PLAIN_MESSAGE,
+    null,
+    AnzahlSoldatenSetzen,
+    "1");  
+    if (AuswahlAnzahlSoldatenSetzen == null) {
+      //    Soldatensetzen abgebrochen      
+    } // end of if
+    int AuswahlAnzahlSoldatenSetzenInteger = Integer.parseInt(AuswahlAnzahlSoldatenSetzen);
+    //Gebiet, auf dem die Soldaten gesetzt werden sollen aus "MeineGebiete" herraussuchen
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      //Wenn Gebiet gefunden, dann Soldatenanzahl im Gebiet erhöhen
+      if (GebietTruppenSetzen == this.MeineGebiete.get(i).getName()) {
+        int aktuelleAnzahlSoldaten = this.MeineGebiete.get(i).getAnzahlSoldaten();
+        int neueAnzahlSoldaten = aktuelleAnzahlSoldaten + AuswahlAnzahlSoldatenSetzenInteger;
+        Anzahl = Anzahl - AuswahlAnzahlSoldatenSetzenInteger;
+      } // end of if
+    }
+    //Wenn keine Soldaten mehr
+    if (Anzahl == 0) {
+      //nothing (Methode wird beendet)
+    } 
+    else {
+      this.TruppenSetzen(Anzahl);
+    } // end of if-else   
   }
+  
+  
   
   
   /**
@@ -173,16 +192,16 @@ public class Spieler {
   Wird ein Gebiet angefordert, das der Spieler nicht hat, wird null zurückgegeben
   */
   public Gebiet GebietAbgeben(String GebietName) {
-        for (int i = 0;i<this.MeineGebiete.size();i++){
-//      Wenn das Gebiet, das abgegeben werden muss gefunden wurde
-          if (GebietName == this.MeineGebiete.get(i).getName()) {
-            Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
-            this.MeineGebiete.remove(i); 
-            return GebietZwischenspeichern;        
-          } // end of if
-        } 
-//    Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
-        return null;                  
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      //      Wenn das Gebiet, das abgegeben werden muss gefunden wurde
+      if (GebietName == this.MeineGebiete.get(i).getName()) {
+        Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
+        this.MeineGebiete.remove(i); 
+        return GebietZwischenspeichern;        
+      } // end of if
+    } 
+    //    Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
+    return null;                  
   }
   
   
@@ -193,7 +212,7 @@ public class Spieler {
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
     this.MeineGebiete.addAll(GebieteAnSpieler);   
     //    for (int i = 0;i<this.MeineGebiete.size();i++){
-//      System.out.println(this.MeineGebiete.get(i).getName());
+    //      System.out.println(this.MeineGebiete.get(i).getName());
     //     
   }
   /**

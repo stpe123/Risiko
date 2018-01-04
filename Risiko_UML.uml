@@ -1,11 +1,12 @@
 [Files]
 File0=BackGroundPane.java
 File1=Gebiet.java
-File2=Risiko.java
-File3=Spieler.java
-File4=Verwaltung.java
-File5=Weltkarte.java
-File6=Wuerfel.java
+File2=Kriegserklärung.java
+File3=Risiko.java
+File4=Spieler.java
+File5=Verwaltung.java
+File6=Weltkarte.java
+File7=Wuerfel.java
 
 [Box:  - BackGroundPane]
 X=74
@@ -18,8 +19,18 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Gebiet]
-X=210
-Y=512
+X=238
+Y=496
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
+
+[Box:  - Kriegserklärung]
+X=1314
+Y=83
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -79,7 +90,7 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=341
+OffsetX=0
 OffsetY=0
 Visibility=0
 ShowParameter=4
@@ -93,9 +104,10 @@ ShowObjectDiagram=0
 [Connections]
 V0=Spieler#Gebiet#Aggregation####0#0#0
 V1=Spieler#Wuerfel#AssociationDirected####0#0#0
-V2=Verwaltung#Spieler#AssociationDirected####0#0#0
-V3=Verwaltung#Gebiet#Aggregation####0#0#0
-V4=Weltkarte#Gebiet#Aggregation####0#0#0
+V2=Spieler#Kriegserklärung#AssociationDirected####0#0#0
+V3=Verwaltung#Spieler#AssociationDirected####0#0#0
+V4=Verwaltung#Gebiet#Aggregation####0#0#0
+V5=Weltkarte#Gebiet#Aggregation####0#0#0
 
 [Interactive]
 I0=
