@@ -45,11 +45,6 @@ public class Gebiet extends JLabel{
   }
 
   
-  
-  public void getAnzahlSoldat() {
-    
-  }
-  
   public int getAnzahlSoldaten() {
     return AnzahlSoldaten;
   }
