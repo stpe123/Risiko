@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 public class Gebiet extends JLabel{
   
   // Attribute*************************************************************************
+  // Anfang Attribute
   private String Name;
   private String Nachbargebiete;
   private int AnzahlSoldaten;
@@ -39,9 +40,10 @@ public class Gebiet extends JLabel{
     
   }
   
-  public void getNachbargebiete() {
-    
+  public String getNachbargebiete() {
+    return "";
   }
+
   
   
   public void getAnzahlSoldat() {
@@ -52,5 +54,9 @@ public class Gebiet extends JLabel{
     return AnzahlSoldaten;
   }
   
+  public String getName() {
+    return Name;
+  }
+
   // Ende Methoden
 } // end of Gebiet

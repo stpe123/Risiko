@@ -20,8 +20,7 @@ public class Spieler {
   private Wuerfel Wuerfel;
   private Kriegserklärung Kriegserklärung;                        
   // Ende Attribute
-  
-  //ArrayList<String> einkaufsListe = new ArrayList<>();                                                      
+                                                        
   
   //Konstruktor um Anfrage an Spieler erweitern: Wie heißt du?
   // -> neuer Konstruktor ohne Übergabeparameter erstellen
@@ -163,28 +162,26 @@ public class Spieler {
     
   }
   /**
-  *Loescht einen Soldaten auf dem aktuellen Kriegserklärung
+  *Löscht einen Soldaten auf der aktuellen "Kriegserklärung"
   */
   public void SoldatLoeschen(int Anzahl) {
     
   }
   /**
   *An wen soll das Gebiet abgegeben werden, Verwaltung oder Gegner?
+  Werwartet den Name des zurückzugebenden Gebiets als Eingabewert.
   Gibt ein Gebiet zurück und entfernt das übergebene Gebiet aus "MeineGebiete".
   */
-  public Gebiet GebietAbgeben() {
-    return null;
-    
-    
+  public Gebiet GebietAbgeben(String GebietName) {
+    return null;                    
   }
+
+  
   /**
   *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
   */
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
-    this.MeineGebiete.addAll(GebieteAnSpieler);    
-    for (int i = 0;i<this.MeineGebiete.size();i++){
-      System.out.println(this.MeineGebiete.get(i).getName());
-    } 
+    this.MeineGebiete.addAll(GebieteAnSpieler);     
   }
   
   public int AnzahlGebiete() {

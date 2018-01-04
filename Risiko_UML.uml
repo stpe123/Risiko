@@ -18,8 +18,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Gebiet]
-X=235
-Y=455
+X=210
+Y=512
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -79,7 +79,7 @@ FontName=MS Sans Serif
 
 [Diagram]
 comments=0
-OffsetX=259
+OffsetX=0
 OffsetY=0
 Visibility=0
 ShowParameter=4
@@ -91,11 +91,11 @@ Fontsize=10
 ShowObjectDiagram=0
 
 [Connections]
-V0=Weltkarte#Gebiet#Composition####0#0#-1
-V1=Spieler#Gebiet#Aggregation####0#0#0
-V2=Spieler#Wuerfel#AssociationDirected####0#0#0
-V3=Verwaltung#Spieler#AssociationDirected####0#0#0
-V4=Verwaltung#Gebiet#Aggregation####0#0#0
+V0=Spieler#Gebiet#Aggregation####0#0#0
+V1=Spieler#Wuerfel#AssociationDirected####0#0#0
+V2=Verwaltung#Spieler#AssociationDirected####0#0#0
+V3=Verwaltung#Gebiet#Aggregation####0#0#0
+V4=Weltkarte#Gebiet#Aggregation####0#0#0
 
 [Interactive]
 I0=

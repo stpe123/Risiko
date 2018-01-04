@@ -40,9 +40,10 @@ public class Gebiet extends JLabel{
     
   }
   
-  public void getNachbargebiete() {
-    
+  public String getNachbargebiete() {
+    return this.Nachbargebiete;
   }
+
   
   
   public void getAnzahlSoldat() {
@@ -53,5 +54,9 @@ public class Gebiet extends JLabel{
     return AnzahlSoldaten;
   }
   
+  public String getName() {
+    return this.Name;
+  }
+
   // Ende Methoden
 } // end of Gebiet
