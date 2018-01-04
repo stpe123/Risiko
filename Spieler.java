@@ -20,7 +20,7 @@ public class Spieler {
   private Wuerfel Wuerfel;
   private Kriegserklärung Kriegserklärung;                        
   // Ende Attribute
-                                                        
+  
   
   //Konstruktor um Anfrage an Spieler erweitern: Wie heißt du?
   // -> neuer Konstruktor ohne Übergabeparameter erstellen
@@ -168,14 +168,23 @@ public class Spieler {
     
   }
   /**
-  *An wen soll das Gebiet abgegeben werden, Verwaltung oder Gegner?
-  Werwartet den Name des zurückzugebenden Gebiets als Eingabewert.
+  *Erwartet den Name des zurückzugebenden Gebiets als Eingabewert.
   Gibt ein Gebiet zurück und entfernt das übergebene Gebiet aus "MeineGebiete".
+  Wird ein Gebiet angefordert, das der Spieler nicht hat, wird null zurückgegeben
   */
   public Gebiet GebietAbgeben(String GebietName) {
-    return null;                    
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      //Wenn das Gebiet, das abgegeben werden muss gefunden wurde
+      if (GebietName == this.MeineGebiete.get(i).getName()) {
+        Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
+        this.MeineGebiete.remove(i); 
+        return GebietZwischenspeichern;        
+      } // end of if
+    } 
+    //Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
+    return null;                  
   }
-
+  
   
   /**
   *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
@@ -184,9 +193,6 @@ public class Spieler {
     this.MeineGebiete.addAll(GebieteAnSpieler);     
   }
   
-  public int AnzahlGebiete() {
-    return 0;
-  }  
   public ArrayList getMeineGebiete() {
     return MeineGebiete;
   }
