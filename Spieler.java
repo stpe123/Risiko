@@ -183,7 +183,7 @@ public class Spieler {
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
     this.MeineGebiete.addAll(GebieteAnSpieler);    
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      System.out.println(this.MeineGebiete.get(i).getNachbargebiete());
+      System.out.println(this.MeineGebiete.get(i).getName());
     } 
   }
   
