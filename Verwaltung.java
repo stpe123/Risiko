@@ -48,7 +48,9 @@ public class Verwaltung {
     return null;
   }
   
-  
+  public ArrayList<Spieler> getSpieler() {
+    return this.spieler;
+  }  
   
   public void WuerfelAugenzahlVergleichen() {
     
@@ -78,22 +80,17 @@ public class Verwaltung {
   
   
   public void GebieteAnSpielerVerteilen() {
-    ArrayList<Gebiet> tmpGebiet = new ArrayList<>();
-    ListIterator<Spieler> SpielerIterator = spieler.listIterator(0);
     
+    ArrayList<Gebiet> tmpGebiet = new ArrayList<>();  //Zwischenvariable  
+    int z = 0;
     for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){      
-      if (SpielerIterator.hasNext()) {
-        tmpGebiet.add(li.next());
-        SpielerIterator.next().GebieteAnnehmen(tmpGebiet); 
+      tmpGebiet.add(li.next());
+      if (spieler.size() <= z) {
+        z=0;
       }
-      else{
-        spieler.listIterator(0);
-        tmpGebiet.add(li.next());
-        //SpielerIterator.GebieteAnnehmen(tmpGebiet);
-        spieler.get(SpielerIterator.previousIndex()+1).GebieteAnnehmen(tmpGebiet);
-      }
+      spieler.get(z++).GebieteAnnehmen(tmpGebiet);
+      tmpGebiet.remove(0); 
     }
-    //System.out.println("Das ist ein Test");
   }
   
   // Ende Methoden
