@@ -1,10 +1,21 @@
 [Files]
-File0=Gebiet.java
-File1=Risiko.java
-File2=Spieler.java
-File3=Verwaltung.java
-File4=Weltkarte.java
-File5=Wuerfel.java
+File0=BackGroundPane.java
+File1=Gebiet.java
+File2=Risiko.java
+File3=Spieler.java
+File4=Verwaltung.java
+File5=Weltkarte.java
+File6=Wuerfel.java
+
+[Box:  - BackGroundPane]
+X=74
+Y=227
+MinVis=0
+ShowParameter=4
+SortOrder=0
+ShowIcons=0
+FontSize=10
+FontName=MS Sans Serif
 
 [Box:  - Gebiet]
 X=235
@@ -37,8 +48,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Verwaltung]
-X=692
-Y=106
+X=688
+Y=198
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -90,9 +101,9 @@ V4=Verwaltung#Gebiet#Aggregation####0#0#0
 I0=
 
 [Window]
-Left=-8
+Left=100
 =>>>>>>> 04d3fb95080637b0b32cc57bde6b8472d9fc459e
-Top=-143
-Width=1382
-Height=626
+Top=100
+Width=1212
+Height=300
 

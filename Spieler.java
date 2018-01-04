@@ -181,11 +181,9 @@ public class Spieler {
   *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
   */
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
-    for (int i = 0;i<GebieteAnSpieler.size();i++){
-      this.MeineGebiete.add(GebieteAnSpieler.get(i));
-    }
+    this.MeineGebiete.addAll(GebieteAnSpieler);    
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      System.out.println(this.MeineGebiete.get(i));
+      System.out.println(this.MeineGebiete.get(i).getNachbargebiete());
     } 
   }
   
