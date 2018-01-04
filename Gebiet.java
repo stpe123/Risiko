@@ -36,9 +36,13 @@ public class Gebiet extends JLabel{
   
   
   // Anfang Methoden*******************************************************************
-  public void setSoldat() {
-    
+  /**
+  *Addiert die übergebene Anzahl an Soldaten zu "AnzahlSoldaten"
+  */
+  public void setSoldat(int Anzahl) {
+    this.AnzahlSoldaten = this.AnzahlSoldaten + Anzahl;    
   }
+
   
   public String getNachbargebiete() {
     return this.Nachbargebiete;
