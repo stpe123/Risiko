@@ -35,9 +35,10 @@ public class Weltkarte extends JFrame{
     panel.setLayout(null);
     
     //Anlegen aller Gebiete in einer Arraylist
-    this.Gebiete.add (new Gebiet("Russland","Polen",580,250));
-    this.Gebiete.add (new Gebiet("Deutschland","Frankreich",730,200));
-    this.Gebiete.add (new Gebiet("Amerika","Brasilien",180,230));   
+    this.Gebiete.add (new Gebiet("Russland","Polen",670,100));
+    this.Gebiete.add (new Gebiet("Deutschland","Frankreich",440,180));
+    this.Gebiete.add (new Gebiet("Amerika","Brasilien",120,180));
+    this.Gebiete.add (new Gebiet("Polen","Deutschland",520,150));   
     
     //Gebiete auf der Karte anzeigen
     for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){
@@ -48,11 +49,13 @@ public class Weltkarte extends JFrame{
     Gebiete.get(0).setForeground(Color.green);
     Gebiete.get(1).setForeground(Color.red);
     Gebiete.get(2).setForeground(Color.red);
+    Gebiete.get(3).setForeground(Color.green);
     
     
     Gebiete.get(0).setText("15");
     Gebiete.get(1).setText("8");
     Gebiete.get(2).setText("12");
+    Gebiete.get(3).setText("10");
     
     
     setVisible(true);
@@ -65,7 +68,7 @@ public class Weltkarte extends JFrame{
   
   // Anfang Methoden*******************************************************************
   public ArrayList<Gebiet> getGebiete() {
-    return Gebiete;
+    return this.Gebiete;
   }
   
   

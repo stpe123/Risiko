@@ -23,7 +23,7 @@ public class Verwaltung {
   //Konstruktor***********************************************************************
   public Verwaltung(ArrayList<Spieler> spieler) {
     this.spieler.addAll (spieler);
-    this.AktuellerSpieler = null;
+    //this.AktuellerSpieler = null;
   }
   
   
@@ -75,19 +75,25 @@ public class Verwaltung {
     return ErlaubteTruppenzahlInInitialisierungsphase;
   }
   
+  
+  
   public void GebieteAnSpielerVerteilen() {
     ArrayList<Gebiet> tmpGebiet = new ArrayList<>();
     ListIterator<Spieler> SpielerIterator = spieler.listIterator(0);
     
-    for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){
+    for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){      
       if (SpielerIterator.hasNext()) {
         tmpGebiet.add(li.next());
         SpielerIterator.next().GebieteAnnehmen(tmpGebiet); 
       }
       else{
         spieler.listIterator(0);
+        tmpGebiet.add(li.next());
+        //SpielerIterator.GebieteAnnehmen(tmpGebiet);
+        spieler.get(SpielerIterator.previousIndex()+1).GebieteAnnehmen(tmpGebiet);
       }
     }
+    //System.out.println("Das ist ein Test");
   }
   
   // Ende Methoden
