@@ -103,8 +103,6 @@ public class Spieler {
     } // end of if-else
     
   }
-  
-  
   /**
   *Gibt einen Ineteger von 1 bis 6 zurück (Augenzahl des Würfels)
   */                                        
@@ -113,15 +111,20 @@ public class Spieler {
   }
   
   /**
-  *Erwartet eine Anzahl an Soldaten als Eingabewert
-  Kein Rueckgabewert
+  *Erwartet eine Anzahl an Soldaten als Eingabewert,
+  Kein Rueckgabewert.
   */
   public void TruppenSetzen(int Anzahl) {
-    //  Dialogbox: auf welchem MeineGebiete möchten Sie Truppen setzen?
-    Object[] EigeneGebiete = {"1", "2", "3"};
+    //Namen der Gebiete des Spielers in einer Liste speichern
+    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+    }  
+    //  Dialogbox: auf welchem Gebiet möchten Sie Truppen setzen?
+    Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String GebietTruppenSetzen = (String)JOptionPane.showInputDialog(
     null,
-    "Auf welches MeineGebiete möchten Sie Soldaten setzen?",
+    "Auf welches Gebiet möchten Sie Soldaten setzen?",
     "Soldaten setzen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -132,7 +135,10 @@ public class Spieler {
     } // end of if 
     else {
       //    Anzahl der Soldaten auf dem MeineGebiete
-      Object[] AnzahlSoldatenSetzen = {"1", "2", "3","4", "5", "6", "7", "8", "9"};
+      Object [] AnzahlSoldatenSetzen = new Object[Anzahl]; 
+      for (int j = 0; j<AnzahlSoldatenSetzen.length ;j++ ) {
+        AnzahlSoldatenSetzen[j] = j+1;                   //Java beginnt bei "0" an zu Zählen        
+      } // end of for
       String AuswahlAnzahlSoldatenSetzen = (String)JOptionPane.showInputDialog(
       null,
       "Wieviele Soldaten möchten Sie setzen?",
@@ -145,6 +151,14 @@ public class Spieler {
         //    Soldatensetzen abgebrochen      
       } // end of if
       else {
+        //Gebiet, auf dem die Soldaten gesetzt werden sollen aus "MeineGebiete" herraussuchen
+        for (int i = 0;i<this.MeineGebiete.size();i++){
+          if (GebietTruppenSetzen == this.MeineGebiete.get(i).getName()) {
+            int aktuelleAnzahlSoldaten = this.MeineGebiete.get(i).getAnzahlSoldaten();
+            int neueAnzahlSoldaten = aktuelleAnzahlSoldaten;
+            Anzahl = Anzahl - AnzahlSoldatenSetzen;
+          } // end of if
+        }
         //    in Array von Eigene MeineGebiete nach GebietTruppenSetzen suchen und Anzahl Soldaten um 
         //    AuswahlAnzahlSoldatenSetzen erhöhen     
       } // end of if-else
@@ -174,29 +188,33 @@ public class Spieler {
   */
   public Gebiet GebietAbgeben(String GebietName) {
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      //Wenn das Gebiet, das abgegeben werden muss gefunden wurde
+      //      Wenn das Gebiet, das abgegeben werden muss gefunden wurde
       if (GebietName == this.MeineGebiete.get(i).getName()) {
         Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
         this.MeineGebiete.remove(i); 
         return GebietZwischenspeichern;        
       } // end of if
     } 
-    //Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
+    //    Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
     return null;                  
   }
   
   
   /**
-  *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
+  *Erwartet eine ArrayList von Gebieten als Übergabewert, speichert 
+  diese in "MeineGebiete". 
   */
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
-    this.MeineGebiete.addAll(GebieteAnSpieler);     
+    this.MeineGebiete.addAll(GebieteAnSpieler);   
+    //    for (int i = 0;i<this.MeineGebiete.size();i++){
+    //      System.out.println(this.MeineGebiete.get(i).getName());
+    //     
   }
-  
+  /**
+  *Gibt die Gebiete des Spielers in einer ArrayList zurück.
+  */
   public ArrayList getMeineGebiete() {
     return MeineGebiete;
-  }
-  
-  
+  } 
   // Ende Methoden
 } // end of Spieler

@@ -103,8 +103,6 @@ public class Spieler {
     } // end of if-else
     
   }
-  
-  
   /**
   *Gibt einen Ineteger von 1 bis 6 zurück (Augenzahl des Würfels)
   */                                        
@@ -113,15 +111,17 @@ public class Spieler {
   }
   
   /**
-  *Erwartet eine Anzahl an Soldaten als Eingabewert
-  Kein Rueckgabewert
+  *Erwartet eine Anzahl an Soldaten als Eingabewert,
+  Kein Rueckgabewert.
   */
   public void TruppenSetzen(int Anzahl) {
-    //  Dialogbox: auf welchem MeineGebiete möchten Sie Truppen setzen?
+    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
+    
+    //  Dialogbox: auf welchem Gebiet möchten Sie Truppen setzen?
     Object[] EigeneGebiete = {"1", "2", "3"};
     String GebietTruppenSetzen = (String)JOptionPane.showInputDialog(
     null,
-    "Auf welches MeineGebiete möchten Sie Soldaten setzen?",
+    "Auf welches Gebiet möchten Sie Soldaten setzen?",
     "Soldaten setzen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -173,36 +173,34 @@ public class Spieler {
   Wird ein Gebiet angefordert, das der Spieler nicht hat, wird null zurückgegeben
   */
   public Gebiet GebietAbgeben(String GebietName) {
-    for (int i = 0;i<this.MeineGebiete.size();i++){
-      //Wenn das Gebiet, das abgegeben werden muss gefunden wurde
-      if (GebietName == this.MeineGebiete.get(i).getName()) {
-        Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
-        this.MeineGebiete.remove(i);
-        for (int j = 0;j<this.MeineGebiete.size();j++){
-          System.out.println(this.MeineGebiete.get(j).getName());
+        for (int i = 0;i<this.MeineGebiete.size();i++){
+//      Wenn das Gebiet, das abgegeben werden muss gefunden wurde
+          if (GebietName == this.MeineGebiete.get(i).getName()) {
+            Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
+            this.MeineGebiete.remove(i); 
+            return GebietZwischenspeichern;        
+          } // end of if
         } 
-        return GebietZwischenspeichern;        
-      } // end of if
-    } 
-    //Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
-    return null;                  
+//    Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
+        return null;                  
   }
   
   
   /**
-  *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
+  *Erwartet eine ArrayList von Gebieten als Übergabewert, speichert 
+  diese in "MeineGebiete". 
   */
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
-    this.MeineGebiete.addAll(GebieteAnSpieler);     
+    this.MeineGebiete.addAll(GebieteAnSpieler);   
+    //    for (int i = 0;i<this.MeineGebiete.size();i++){
+//      System.out.println(this.MeineGebiete.get(i).getName());
+    //     
   }
-  
-  public int AnzahlGebiete() {
-    return 0;
-  }  
+  /**
+  *Gibt die Gebiete des Spielers in einer ArrayList zurück.
+  */
   public ArrayList getMeineGebiete() {
     return MeineGebiete;
-  }
-  
-  
+  } 
   // Ende Methoden
 } // end of Spieler
