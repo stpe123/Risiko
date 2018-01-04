@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 public class Gebiet extends JLabel{
   
   // Attribute*************************************************************************
+  // Anfang Attribute
   private String Name;
   private String Nachbargebiete;
   private int AnzahlSoldaten;

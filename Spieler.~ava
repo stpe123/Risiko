@@ -18,7 +18,7 @@ public class Spieler {
   private String Name;
   private ArrayList<Gebiet> MeineGebiete;
   private Wuerfel Wuerfel;
-  private Kriegsgebiet Kriegsgebiet;                        
+  private Kriegserklärung Kriegserklärung;                        
   // Ende Attribute
   
   //ArrayList<String> einkaufsListe = new ArrayList<>();                                                      
@@ -29,7 +29,7 @@ public class Spieler {
     this.Name = Name;
     this.MeineGebiete = new ArrayList<>();
     this.Wuerfel = new Wuerfel();
-    this.Kriegsgebiet = new Kriegsgebiet();
+    this.Kriegserklärung = new Kriegserklärung();
   }
   
   
@@ -40,12 +40,12 @@ public class Spieler {
   
   /**
   *Keine Eingabewerte
-  Ein Objekt wird zurückgegeben: Kriegsgebiet und Augenzahl des Würfels als Attribute
+  Ein Objekt wird zurückgegeben: Kriegserklärung und Augenzahl des Würfels als Attribute
   Falls nicht angegriffen wird: Augenzahl == 0
-  Kriegsgebiet == noone
-  Zurzeit werden für Kriegsgebiet.Name Zahlen übergeben
+  Kriegserklärung == noone
+  Zurzeit werden für Kriegserklärung.Name Zahlen übergeben
   */
-  public Kriegsgebiet angreifen() {
+  public Kriegserklärung angreifen() {
     //Dialog Box: "Möchten Sie angreifen"   
     Object[] options = {"Nein","Ja"};
     int angriff = JOptionPane.showOptionDialog(null,
@@ -60,7 +60,7 @@ public class Spieler {
     // Ja: angriff == 1, Nein:angriff == 0;
     if (angriff == 1) {
       //    Würfeln
-      this.Kriegsgebiet.setAugenzahl(this.Wuerfel.getAugenzahl()); 
+      this.Kriegserklärung.setAugenzahl(this.Wuerfel.getAugenzahl()); 
       //    Dialogbox: MeineGebiete Auwählen, von dem aus angegriffen wird
       Object[] EigeneGebiete = {"1", "2", "3"};
       String Angriffsgebiet = (String)JOptionPane.showInputDialog(
@@ -73,34 +73,34 @@ public class Spieler {
       "1");
       if (Angriffsgebiet == null) {
         //      Angriff abgebrochen  
-        this.Kriegsgebiet.setAugenzahl(0);
-        this.Kriegsgebiet.setName("noone");
-        return this.Kriegsgebiet;
+        this.Kriegserklärung.setAugenzahl(0);
+        this.Kriegserklärung.setName("noone");
+        return this.Kriegserklärung;
       } // end of if
-      //    Dialogbox: Kriegsgebiet Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
+      //    Dialogbox: Kriegserklärung Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
       Object[] MoeglicheKriegsgebiete = {"4", "5", "6"};
       String KriegsgebietName = (String)JOptionPane.showInputDialog(
       null,
       "Welches MeineGebiete möchten Sie angreifen?",
-      "Kriegsgebiet auswählen",
+      "Kriegserklärung auswählen",
       JOptionPane.PLAIN_MESSAGE,
       null,
       MoeglicheKriegsgebiete,
       "4");
       if (KriegsgebietName == null) {
         //      Angriff abgebrochen  
-        this.Kriegsgebiet.setAugenzahl(0);
-        this.Kriegsgebiet.setName("noone");
-        return this.Kriegsgebiet;
+        this.Kriegserklärung.setAugenzahl(0);
+        this.Kriegserklärung.setName("noone");
+        return this.Kriegserklärung;
       } // end of if
-      this.Kriegsgebiet.setName(KriegsgebietName);
-      return this.Kriegsgebiet;
+      this.Kriegserklärung.setName(KriegsgebietName);
+      return this.Kriegserklärung;
     } // end of if
     else {
       //    Kein Angriff
-      this.Kriegsgebiet.setAugenzahl(0);
-      this.Kriegsgebiet.setName("noone");
-      return this.Kriegsgebiet;
+      this.Kriegserklärung.setAugenzahl(0);
+      this.Kriegserklärung.setName("noone");
+      return this.Kriegserklärung;
     } // end of if-else
     
   }
@@ -163,7 +163,7 @@ public class Spieler {
     
   }
   /**
-  *Loescht einen Soldaten auf dem aktuellen Kriegsgebiet
+  *Loescht einen Soldaten auf dem aktuellen Kriegserklärung
   */
   public void SoldatLoeschen(int Anzahl) {
     
@@ -181,10 +181,10 @@ public class Spieler {
   *Erwartet eine ArrayList "GebieteAnSpieler" von Gebieten als Übergabewert.
   */
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
-    for (int i = 0;i<GebieteAnSpieler.size();i++){
-      
-    }
-    
+    this.MeineGebiete.addAll(GebieteAnSpieler);    
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      System.out.println(this.MeineGebiete.get(i));
+    } 
   }
   
   public int AnzahlGebiete() {
