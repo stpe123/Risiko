@@ -6,6 +6,7 @@
   * @author 
   */
 import java.util.*;
+import javax.swing.JOptionPane;     //Dialogbox 
 
 public class Verwaltung {
   
@@ -73,6 +74,7 @@ public class Verwaltung {
     if (spieler.size() <= SpielerIndex) {
       SpielerIndex=0;
     } // end of if
+    JOptionPane.showMessageDialog(null, spieler.get(SpielerIndex).getName()+"! Sie sind dran.");
     return spieler.get(SpielerIndex++);
     
   }
@@ -96,6 +98,19 @@ public class Verwaltung {
       spieler.get(z++).GebieteAnnehmen(tmpGebiet);
       tmpGebiet.remove(0); 
     }
+  }
+  
+  
+  public Spieler BesitzerErmitteln(String Kriegsgebiet) {
+    return spieler.get(0); //Muss noch implementiert werden
+  }
+  
+  public void SpielerEntfernen(Spieler Verlierer) {
+    
+  }
+  
+  public String GewinnerErmitteln() {
+     return "niemand";
   }
   
   // Ende Methoden

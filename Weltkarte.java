@@ -90,5 +90,11 @@ public class Weltkarte extends JFrame{
     this.Gebiete.add (new Gebiet("Australien","Deutschland",570,300));
   }
   
-  // Ende Methoden
-} // end of Weltkarte
+  
+  public void SpielerAnzeigen(ArrayList<Spieler> Spielernamen) {
+    
+  }
+  
+  
+    // Ende Methoden
+  } // end of Weltkarte
