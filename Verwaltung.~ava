@@ -101,17 +101,39 @@ public class Verwaltung {
   }
   
   
-  public Spieler BesitzerErmitteln(String Kriegsgebiet) {
-    return spieler.get(0); //Muss noch implementiert werden
+  public Spieler getBesitzer(String SpielerName) {  
+    for (int i = 0;i<this.spieler.size();i++){
+      if (SpielerName == this.spieler.get(i).getName()) { 
+        return this.spieler.get(i);       
+      }
+    } 
+    //    Wenn Methode hier angekommen ist, gibt es den Spieler nicht
+    return null;
   }
   
   public void SpielerEntfernen(Spieler Verlierer) {
-    
+    JOptionPane.showMessageDialog(null,Verlierer.getName()+" hat leider verloren!");
+    this.spieler.remove(Verlierer);
   }
   
-  public String GewinnerErmitteln() {
-     return "niemand";
+  public boolean GewinnerErmitteln() {
+    for (int i = 0;i<this.spieler.size();i++){
+      if (this.Gebiete.size() == this.spieler.get(i).getMeineGebiete().size()) { 
+        JOptionPane.showMessageDialog(null,this.spieler.get(i).getName()+" hat gewonnen!\n Das Spiel ist zu Ende");
+        return true;      
+      }
+    } 
+    return false;
   }
   
+  public Gebiet getGebiet(String Gebietsname) {
+    for (int i = 0;i<this.Gebiete.size();i++){
+      if (Gebietsname == this.Gebiete.get(i).getName()) { 
+        return this.Gebiete.get(i);       
+      }
+    } 
+    //    Wenn Methode hier angekommen ist, gibt es das Gebiet nicht
+    return null;
+  }
   // Ende Methoden
 } // end of Verwaltung

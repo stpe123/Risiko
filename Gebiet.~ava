@@ -9,12 +9,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO; 
+import java.util.*;                 //ArrayList benutzen
 
 public class Gebiet extends JLabel{
   
   // Attribute*************************************************************************
   // Anfang Attribute
+  private Color Farbe;
   private String Name;
   private ArrayList<String> Nachbargebiete;
   private int AnzahlSoldaten;
@@ -28,13 +30,11 @@ public class Gebiet extends JLabel{
   //Konstruktor************************************************************************
   public Gebiet(String Name, int xKoordinate, int yKoordinate) {
     this.Name = Name;
-    this.Nachbargebiete = "";
-    this.AnzahlSoldaten = 0;
-    this.Besitzer = "";
+    this.AnzahlSoldaten = 1;
     this.setFont(this.getFont().deriveFont(25f));
     this.setBounds(xKoordinate, yKoordinate, 30, 30);
   }
-
+  
   
   
   
@@ -44,14 +44,16 @@ public class Gebiet extends JLabel{
   *Addiert die übergebene Anzahl an Soldaten zu "AnzahlSoldaten"
   */
   public void setSoldat(int Anzahl) {
-    this.AnzahlSoldaten = this.AnzahlSoldaten + Anzahl;    
+    this.AnzahlSoldaten = this.AnzahlSoldaten + Anzahl;
+    this.setText(Integer.valueOf(this.AnzahlSoldaten).toString());                     //Soldatenzahl anzeigen
+    //this.setForeground();                        //Farbe vergeben   
   }
-
+  
   
   public ArrayList<String> getNachbargebiete() {
     return Nachbargebiete;
   }
-
+  
   
   public int getAnzahlSoldaten() {
     return AnzahlSoldaten;
@@ -60,18 +62,26 @@ public class Gebiet extends JLabel{
   public String getName() {
     return this.Name;
   }
-
+  
   public String getBesitzer() {
     return Besitzer;
   }
-
+  
+  
   public void setBesitzer(String Besitzer) {
     this.Besitzer = Besitzer;
   }
-
+  
   public void setNachbargebiete(ArrayList<String> Nachbargebiete) {
     this.Nachbargebiete = Nachbargebiete;
   }
-
+  
+  public Color getFarbe() {
+    return Farbe;
+  }
+  
+  public void setFarbe(Color Farbe) {
+    this.Farbe = Farbe;
+  }
   // Ende Methoden
 } // end of Gebiet

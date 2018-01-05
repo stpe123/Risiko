@@ -16,6 +16,10 @@ public class Weltkarte extends JFrame{
   
   // Anfang Attribute***************************************************************
   private ArrayList<Gebiet> Gebiete = new ArrayList<>();
+  private ArrayList<JLabel> Namensliste = new ArrayList<>();
+  private Color[] Spielerfarben = {new Color(0,255,0),new Color(0,0,255),new Color(255,0,0),new Color(255,0,255),new Color(0,255,255)};
+  public JPanel panel;
+  
   // Ende Attribute
   
   
@@ -28,11 +32,13 @@ public class Weltkarte extends JFrame{
     this.FensterEinstellen();
     
     //Panel, um Labels anzeigen zu können
-    JPanel panel = (JPanel) getContentPane();
+    panel = (JPanel) getContentPane();
     panel.setLayout(null);
     
     //Anlegen aller Gebiete in einer Arraylist
     this.GebieteDefinieren();
+    
+    
     
     //Gebiete auf der Karte anzeigen
     for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){
@@ -81,20 +87,31 @@ public class Weltkarte extends JFrame{
   }
   
   private void GebieteDefinieren() {
-    this.Gebiete.add (new Gebiet("Russland","Polen",670,100));
-    this.Gebiete.add (new Gebiet("Deutschland","Frankreich",440,180));
-    this.Gebiete.add (new Gebiet("Amerika","Brasilien",120,180));
-    this.Gebiete.add (new Gebiet("Polen","Deutschland",520,150));
-    this.Gebiete.add (new Gebiet("Afrika","Deutschland",50,200));
-    this.Gebiete.add (new Gebiet("Alaska","Deutschland",570,200));
-    this.Gebiete.add (new Gebiet("Australien","Deutschland",570,300));
+    this.Gebiete.add (new Gebiet("Russland",670,100));
+    this.Gebiete.add (new Gebiet("Deutschland",440,180));
+    this.Gebiete.add (new Gebiet("Amerika",120,180));
+    this.Gebiete.add (new Gebiet("Polen",520,150));
+    this.Gebiete.add (new Gebiet("Afrika",50,200));
+    this.Gebiete.add (new Gebiet("Alaska",570,200));
+    this.Gebiete.add (new Gebiet("Australien",570,300));
   }
   
   
   public void SpielerAnzeigen(ArrayList<Spieler> Spielernamen) {
+    //Spieler auf der Karte anzeigen
+    for (int i = 0;i<Spielernamen.size();i++){
+      Namensliste.add (new JLabel(Spielernamen.get(i).getName()));               //Name einfügen
+      panel.add (Namensliste.get(i));
+      Namensliste.get(i).setForeground(Spielerfarben[i]);                        //Farbe vergeben
+      Namensliste.get(i).setFont(this.getFont().deriveFont(25f));                //Schriftgröße festlegen
+      Namensliste.get(i).setBounds(10, i*30, 100, 50);                           //Position und Größe festlegen
+      Namensliste.get(i).setText(Spielernamen.get(i).getName());                 //Text festlegen
+      Spielernamen.get(i).setFarbe(Spielerfarben[i]);
+      //setVisible(true);
+    }
     
   }
   
   
-    // Ende Methoden
-  } // end of Weltkarte
+  // Ende Methoden
+} // end of Weltkarte

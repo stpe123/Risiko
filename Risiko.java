@@ -12,16 +12,9 @@
 public class Risiko {
   
   // Anfang Attribute
-  Kriegserklaerung Kriegserkl;
   
-  Spieler AktuellerSpieler;
-  Spieler Verteidiger;
   
-  Gebiet AngreiferGebiet;
-  Gebiet VerteidigungsGebiet;
   
-  int AugenzahlAngreifer;
-  int AugenzahlVerteidiger;
   // Ende Attribute
   
   // Anfang Methoden
@@ -33,10 +26,17 @@ public class Risiko {
     spieler.add (new Spieler("Stefan"));
     spieler.add (new Spieler("Alex"));
     
-    
+    Spieler AktuellerSpieler;
+    Spieler Verteidiger;
+    Kriegserklaerung Kriegserkl;
+    Gebiet AngreiferGebiet;
+    Gebiet VerteidigungsGebiet;
+    int AugenzahlAngreifer;
+    int AugenzahlVerteidiger;
     
     Verwaltung VW = new Verwaltung(spieler);
     Weltkarte Erde = new Weltkarte();    
+    Erde.SpielerAnzeigen(spieler);
     
     //Verwaltung verteilt die Gebietskarten an Spieler
     VW.GebieteEinsammeln(Erde.getGebiete());
@@ -70,17 +70,17 @@ public class Risiko {
         
         //Verteidiger und sein Gebiet ermitteln
         VerteidigungsGebiet=VW.getGebiet(Kriegserkl.getKriegsgebiet());
-        Verteidiger=VW.getBesitzer(Kriegserkl.getKriegsgebiet());
+        Verteidiger=VW.getBesitzer(VerteidigungsGebiet.getBesitzer());
         
         
         //Angreifergebiet ermitteln
-        AngreiferGebiet=VW.getGebiet(Kriegserkl.getAngreiferGebiet());
+        AngreiferGebiet=VW.getGebiet(Kriegserkl.getAngreifendesGebiet());
         
         
         //Gefechtssituation/////////////////////////////////////////////////////////
         //Beide würfeln
-        AugenzahlAngreifer = Kriegserkl.getAugenzahl();
-        AugenzahlVerteidiger = Verteidiger.verteidigen();
+        AugenzahlAngreifer = AktuellerSpieler.wuerfeln();
+        AugenzahlVerteidiger = Verteidiger.wuerfeln();
         
         //Verteidiger hat verloren
         if (AugenzahlAngreifer >= AugenzahlVerteidiger) {
@@ -90,8 +90,8 @@ public class Risiko {
           }
           else {
             //Der Verteidiger hat keine Soldaten mehr auf dem Gebiet und muss es nun abgeben
-            AktuellerSpieler.GebieteAnnehmen(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
-            if (Verteidiger.getAnzahlGebiete() == 0) {
+            //AktuellerSpieler.GebieteAnnehmen(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
+            if (Verteidiger.getMeineGebiete().size() == 0) {
               //Spieler hat verloren und wird gelöscht
               VW.SpielerEntfernen(Verteidiger);
             }

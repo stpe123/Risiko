@@ -16,6 +16,7 @@ public class Gebiet extends JLabel{
   
   // Attribute*************************************************************************
   // Anfang Attribute
+  private Color Farbe;
   private String Name;
   private ArrayList<String> Nachbargebiete;
   private int AnzahlSoldaten;
@@ -43,7 +44,9 @@ public class Gebiet extends JLabel{
   *Addiert die übergebene Anzahl an Soldaten zu "AnzahlSoldaten"
   */
   public void setSoldat(int Anzahl) {
-    this.AnzahlSoldaten = this.AnzahlSoldaten + Anzahl;    
+    this.AnzahlSoldaten = this.AnzahlSoldaten + Anzahl;
+    this.setText(Integer.valueOf(this.AnzahlSoldaten).toString());                     //Soldatenzahl anzeigen
+    //this.setForeground();                        //Farbe vergeben   
   }
   
   
@@ -64,6 +67,7 @@ public class Gebiet extends JLabel{
     return Besitzer;
   }
   
+  
   public void setBesitzer(String Besitzer) {
     this.Besitzer = Besitzer;
   }
@@ -72,5 +76,12 @@ public class Gebiet extends JLabel{
     this.Nachbargebiete = Nachbargebiete;
   }
   
+  public Color getFarbe() {
+    return Farbe;
+  }
+  
+  public void setFarbe(Color Farbe) {
+    this.Farbe = Farbe;
+  }
   // Ende Methoden
 } // end of Gebiet
