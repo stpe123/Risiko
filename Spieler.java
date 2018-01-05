@@ -10,6 +10,7 @@
 
 import javax.swing.JOptionPane;     //Dialogbox    
 import java.util.*;                 //ArrayList benutzen
+import java.awt.Color;
 
 public class Spieler {
   
@@ -18,6 +19,7 @@ public class Spieler {
   private ArrayList<Gebiet> MeineGebiete;
   private Wuerfel Wuerfel;
   private Kriegserklaerung Kriegserklaerung;                        
+  private Color Farbe;
   // Ende Attribute
   
   
@@ -65,7 +67,7 @@ public class Spieler {
     } // end of if-else
     int AngriffsgebietIndex = 0; 
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      if (this.MeineGebiete.get(i).getName() == Angriffsgebiet) {
+      if (this.MeineGebiete.get(i).getName().equals(Angriffsgebiet)) {
         AngriffsgebietIndex = i;
       } // end of if
       else {
@@ -73,7 +75,33 @@ public class Spieler {
       } // end of if-else
     }
     //    Dialogbox: Kriegserklaerung Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein)  
-    Object[] MoeglicheKriegsgebiete = this.MeineGebiete.get(AngriffsgebietIndex).getNachbargebiete().toArray();
+    ArrayList<String> MoeglicheKriegsgebieteArrayList = new ArrayList<String>();
+    boolean NachbargebietGehoertAngreiferFlag = false;
+    for (int i = 0; i< this.MeineGebiete.get(AngriffsgebietIndex).getNachbargebiete().size(); i++) {
+      //Nur feindlich besetzte Nachbargebiete sind mögliche Kriegsgebiete 
+      String NachbargebietPruefen = this.MeineGebiete.get(AngriffsgebietIndex).getNachbargebiete().get(i);
+      for (int j = 0; j<this.MeineGebiete.size(); j++ ) {
+        String EigenesGebietPruefen = this.MeineGebiete.get(j).getName();
+        if (EigenesGebietPruefen.equals(NachbargebietPruefen)) {
+          //Nachbargebiet ist nicht feindlich besetzt
+          NachbargebietGehoertAngreiferFlag = true;
+          System.out.println(NachbargebietPruefen);
+        } // end of if
+        else {
+          System.out.println(NachbargebietPruefen); 
+          System.out.println(NachbargebietGehoertAngreiferFlag);
+        } // end of if-else
+      } // end of for
+      if (!NachbargebietGehoertAngreiferFlag) {
+        MoeglicheKriegsgebieteArrayList.add(NachbargebietPruefen);
+      } // end of if
+      else {
+        //Wenn Nachbargebiet dem Angreifer gehört, wird es nicht übernommen und Flag wieder auf false gesetzt
+        NachbargebietGehoertAngreiferFlag = false;
+      } // end of if-else
+    } // end of for
+    
+    Object[] MoeglicheKriegsgebiete = MoeglicheKriegsgebieteArrayList.toArray();
     String KriegsgebietName = (String)JOptionPane.showInputDialog(
     null,
     this.getName() + ": Welches Gebiet möchten Sie angreifen?",
@@ -92,13 +120,16 @@ public class Spieler {
     } // end of if-else 
   }
   
+  
+  
   /**
   *Gibt einen Ineteger von 1 bis 6 zurück (Augenzahl des Würfels)
   */                                        
   public int wuerfeln() {
-    return 0;
+    return this.Wuerfel.getAugenzahl();
   }
-
+  
+  
   
   /**
   *Erwartet eine Anzahl an Soldaten als Eingabewert,
@@ -112,7 +143,7 @@ public class Spieler {
     }  
     //  Dialogbox: auf welchem Gebiet möchten Sie Truppen setzen?
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
-    String GebietTruppenSetzen = (String)JOptionPane.showInputDialog(
+    String TruppenSetzenGebiet = (String)JOptionPane.showInputDialog(
     null,
     this.getName() + ": Auf welches Gebiet möchten Sie Soldaten setzen?",
     "Soldaten setzen",
@@ -121,7 +152,7 @@ public class Spieler {
     EigeneGebiete,
     "1");
     
-    if (GebietTruppenSetzen == null) {
+    if (TruppenSetzenGebiet == null) {
       //      TruppenSetzen abgebrochen  
     } // end of if 
     //    Anzahl der Soldaten, die auf dem Gebiete gesetzt werden sollen
@@ -144,7 +175,7 @@ public class Spieler {
     //Gebiet, auf dem die Soldaten gesetzt werden sollen aus "MeineGebiete" herraussuchen
     for (int i = 0;i<this.MeineGebiete.size();i++){
       //Wenn Gebiet gefunden, dann Soldatenanzahl im Gebiet erhöhen
-      if (GebietTruppenSetzen == this.MeineGebiete.get(i).getName()) {
+      if (TruppenSetzenGebiet == this.MeineGebiete.get(i).getName()) {
         this.MeineGebiete.get(i).setSoldat(AuswahlAnzahlSoldatenSetzen);  
         Anzahl = Anzahl - AuswahlAnzahlSoldatenSetzen;
       } // end of if
@@ -159,14 +190,58 @@ public class Spieler {
     } // end of if-else   
   }
   
+  
+  
   /**
   *Gibt dem Spieler die Möglichkeit, Truppen von einem Gebiet zu einem Nachbargebiet zu
   bewegen, wenn dieses nicht feindlich besetzt ist.
   Ohne Eingabe-/Rückgabewerte.
   */
-  public void TruppenBewegen() {
-    
-  }
+//  public void TruppenBewegen() { 
+  //    Namen der Gebiete des Spielers in einer Liste speichern
+//    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
+//    for (int i = 0;i<this.MeineGebiete.size();i++){
+//      NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+//    }
+  //        Dialogbox: Gebiet Anwählen, von dem aus Truppen bewegt werden sollen
+//    Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
+//    String TruppenBewegenGebiet = (String)JOptionPane.showInputDialog(
+//    null,
+//    this.getName() + ": Von welchem Gebiet möchten Truppen bewegen?",
+//    "Truppen bewegen",
+//    JOptionPane.PLAIN_MESSAGE,
+//    null,
+//    EigeneGebiete,
+//    "1");
+//    int TruppenBewegenGebietIndex = 0; 
+//    for (int i = 0;i<this.MeineGebiete.size();i++){
+//      if (this.MeineGebiete.get(i).getName().equals(TruppenBewegenGebiet)) {
+//        TruppenBewegenGebietIndex = i;
+//      } // end of if
+//    }
+//    
+//    if (TruppenbewegenGebiet == null) {
+  //      Truppen bewegen abgebrochen  
+//    } // end of if
+//    else {
+  //          Anzahl der Soldaten, die von dem Gebiet bewegt werden sollen
+//      Object [] AnzahlSoldatenBewegen = new Object[Anzahl]; 
+//      for (int j = 0; j<this.MeineGebiete.get() ;j++ ) {
+//        AnzahlSoldatenSetzen[j] = j+1;                   //Java beginnt bei "0" an zu Zählen        
+//      } // end of for
+//      Integer AuswahlAnzahlSoldatenSetzen = (Integer)JOptionPane.showInputDialog(
+//      null,
+//      this.getName() + ": Wieviele Soldaten möchten Sie setzen?",
+//      "Soldaten setzen",
+//      JOptionPane.PLAIN_MESSAGE,
+//      null,
+//      AnzahlSoldatenSetzen,
+//        "1");
+//    } // end of if-else
+//  }
+  //  
+  
+  
   /**
   *Löscht einen Soldaten auf der aktuellen "Kriegserklaerung".
   Anzahl ist positiv, damit die Soldaten entfernt werden.
@@ -182,6 +257,7 @@ public class Spieler {
     }
     
   }
+  
   
   
   /**
@@ -203,6 +279,7 @@ public class Spieler {
   }
   
   
+  
   /**
   *Erwartet eine ArrayList von Gebieten als Übergabewert, speichert 
   diese in "MeineGebiete". 
@@ -214,12 +291,18 @@ public class Spieler {
       this.MeineGebiete.get(i).setBesitzer(this.getName());  
     }
   }
+  
+  
+  
   /**
   *Gibt die Gebiete des Spielers in einer ArrayList zurück.
   */
   public ArrayList getMeineGebiete() {
     return MeineGebiete;
   }
+  
+  
+  
   /**
   *Liefert true, wenn der Spieler angreifen möchte, sonst false.
   */ 
@@ -241,6 +324,16 @@ public class Spieler {
     else {
       return false;
     } // end of if-else
+  }
+  
+  
+  
+  public Color getFarbe() {
+    return Farbe;
+  }
+  
+  public void setFarbe(Color Farbe) {
+    this.Farbe = Farbe;
   }
   
   // Ende Methoden
