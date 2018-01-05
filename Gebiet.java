@@ -9,14 +9,15 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO; 
+import java.util.*;                 //ArrayList benutzen
 
 public class Gebiet extends JLabel{
   
   // Attribute*************************************************************************
   // Anfang Attribute
   private String Name;
-  private String Nachbargebiete;
+  private ArrayList<String> Nachbargebiete;
   private int AnzahlSoldaten;
   private String Besitzer;
   // Ende Attribute
@@ -26,12 +27,13 @@ public class Gebiet extends JLabel{
   
   
   //Konstruktor************************************************************************
-  public Gebiet(String Name, String Nachbargebiete, int xKoordinate, int yKoordinate) {
+  public Gebiet(String Name, int xKoordinate, int yKoordinate) {
     this.Name = Name;
-    this.Nachbargebiete = Nachbargebiete;
+    this.AnzahlSoldaten = 1;
     this.setFont(this.getFont().deriveFont(25f));
     this.setBounds(xKoordinate, yKoordinate, 30, 30);
   }
+  
   
   
   
@@ -43,12 +45,12 @@ public class Gebiet extends JLabel{
   public void setSoldat(int Anzahl) {
     this.AnzahlSoldaten = this.AnzahlSoldaten + Anzahl;    
   }
-
   
-  public String getNachbargebiete() {
+  
+  public ArrayList<String> getNachbargebiete() {
     return Nachbargebiete;
   }
-
+  
   
   public int getAnzahlSoldaten() {
     return AnzahlSoldaten;
@@ -57,10 +59,18 @@ public class Gebiet extends JLabel{
   public String getName() {
     return this.Name;
   }
-
+  
   public String getBesitzer() {
     return Besitzer;
   }
-
+  
+  public void setBesitzer(String Besitzer) {
+    this.Besitzer = Besitzer;
+  }
+  
+  public void setNachbargebiete(ArrayList<String> Nachbargebiete) {
+    this.Nachbargebiete = Nachbargebiete;
+  }
+  
   // Ende Methoden
 } // end of Gebiet
