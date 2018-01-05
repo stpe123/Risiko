@@ -102,15 +102,12 @@ Fontsize=10
 ShowObjectDiagram=0
 
 [Connections]
-V0=Risiko#Kriegserklaerung#AssociationDirected####0#0#0
-V1=Risiko#Spieler#AssociationDirected####0#0#0
-V2=Risiko#Gebiet#AssociationDirected####0#0#0
-V3=Spieler#Gebiet#Aggregation####0#0#0
-V4=Spieler#Wuerfel#AssociationDirected####0#0#0
-V5=Spieler#Kriegserklaerung#AssociationDirected####0#0#0
-V6=Verwaltung#Spieler#AssociationDirected####0#0#0
-V7=Verwaltung#Gebiet#Aggregation####0#0#0
-V8=Weltkarte#Gebiet#Aggregation####0#0#0
+V0=Spieler#Gebiet#Aggregation####0#0#0
+V1=Spieler#Wuerfel#AssociationDirected####0#0#0
+V2=Spieler#Kriegserklaerung#AssociationDirected####0#0#0
+V3=Verwaltung#Spieler#AssociationDirected####0#0#0
+V4=Verwaltung#Gebiet#Aggregation####0#0#0
+V5=Weltkarte#Gebiet#Aggregation####0#0#0
 
 [Interactive]
 I0=
