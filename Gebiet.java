@@ -16,7 +16,7 @@ public class Gebiet extends JLabel{
   // Attribute*************************************************************************
   // Anfang Attribute
   private String Name;
-  private Gebiet[] Nachbargebiete;
+  private String Nachbargebiete;
   private int AnzahlSoldaten;
   private String Besitzer;
   // Ende Attribute
@@ -45,7 +45,7 @@ public class Gebiet extends JLabel{
   }
 
   
-  public Gebiet[] getNachbargebiete() {
+  public String getNachbargebiete() {
     return Nachbargebiete;
   }
 

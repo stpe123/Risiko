@@ -10,7 +10,7 @@ public class Kriegserklaerung {
   
   // Anfang Attribute
   private int Augenzahl;
-  private Gebiet Gebiet;
+  private String Name;
   // Ende Attribute
   
   // Anfang Methoden
@@ -22,12 +22,12 @@ public class Kriegserklaerung {
     this.Augenzahl = Augenzahl;
   }
 
-  public Gebiet getGebiet() {
-    return Gebiet;
+  public String getName() {
+    return Name;
   }
 
-  public void setGebiet(Gebiet Gebiet) {
-    this.Gebiet = Gebiet;
+  public void setName(String Name) {
+    this.Name = Name;
   }
 
   // Ende Methoden

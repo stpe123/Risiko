@@ -79,8 +79,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Wuerfel]
-X=1089
-Y=472
+X=1150
+Y=476
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -91,7 +91,7 @@ FontName=MS Sans Serif
 [Diagram]
 comments=0
 OffsetX=0
-OffsetY=109
+OffsetY=0
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -102,15 +102,13 @@ Fontsize=10
 ShowObjectDiagram=0
 
 [Connections]
-V0=Gebiet#Gebiet#Aggregation####1#0#0
-V1=Kriegserklaerung#Gebiet#AssociationDirected####0#0#0
-V2=Risiko#Kriegserklaerung#AssociationDirected####0#0#0
-V3=Spieler#Gebiet#Aggregation####0#0#0
-V4=Spieler#Wuerfel#AssociationDirected####0#0#0
-V5=Spieler#Kriegserklaerung#AssociationDirected####0#0#0
-V6=Verwaltung#Spieler#AssociationDirected####0#0#0
-V7=Verwaltung#Gebiet#Aggregation####0#0#0
-V8=Weltkarte#Gebiet#Aggregation####0#0#0
+V0=Risiko#Kriegserklaerung#AssociationDirected####0#0#0
+V1=Spieler#Gebiet#Aggregation####0#0#0
+V2=Spieler#Wuerfel#AssociationDirected####0#0#0
+V3=Spieler#Kriegserklaerung#AssociationDirected####0#0#0
+V4=Verwaltung#Spieler#AssociationDirected####0#0#0
+V5=Verwaltung#Gebiet#Aggregation####0#0#0
+V6=Weltkarte#Gebiet#Aggregation####0#0#0
 
 [Interactive]
 I0=

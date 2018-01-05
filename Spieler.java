@@ -7,7 +7,6 @@
   */
   
   //to do: siehe Konstruktor
-  //       Array mit EigeneGebiete erstellen  
 
 import javax.swing.JOptionPane;     //Dialogbox    
 import java.util.*;                 //ArrayList benutzen
@@ -40,15 +39,12 @@ public class Spieler {
   /**
   *Keine Eingabewerte
   Ein Objekt wird zurückgegeben: Kriegserklaerung und Augenzahl des Würfels als Attribute
-  Falls nicht angegriffen wird: Augenzahl == 0
-  Kriegserklaerung == noone
-  Zurzeit werden für Kriegserklaerung.Name Zahlen übergeben
   */
   public Kriegserklaerung angreifen() {
     //    Würfeln
     this.Kriegserklaerung.setAugenzahl(this.Wuerfel.getAugenzahl());
     //Namen der Gebiete des Spielers in einer Liste speichern
-    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
+    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
     } 
@@ -98,7 +94,7 @@ public class Spieler {
   */
   public void TruppenSetzen(int Anzahl) {
     //Namen der Gebiete des Spielers in einer Liste speichern
-    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
+    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
     }  
@@ -164,7 +160,7 @@ public class Spieler {
   Anzahl ist positiv, damit die Soldaten entfernt werden.
   */
   public void SoldatLoeschen(int Anzahl, String Gebiet) {
-    //Abfrage, ob noch Soldaten auf dem Gebiet sind muss noch implementiert werden!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //Abfrage, ob noch Soldaten auf dem Gebiet sind muss noch implementiert werden!!
     for (int i = 0;i<this.MeineGebiete.size();i++){
       //      Wenn das Gebiet, von dem Soldaten entfernt werden muss, gefunden wurde
       if (Gebiet == this.MeineGebiete.get(i).getName()) {
@@ -199,7 +195,7 @@ public class Spieler {
   *Erwartet eine ArrayList von Gebieten als Übergabewert, speichert 
   diese in "MeineGebiete". 
   */
-  public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
+  public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {  //Name als Besitzer reinschreiben
     this.MeineGebiete.addAll(GebieteAnSpieler);   
   }
   /**
