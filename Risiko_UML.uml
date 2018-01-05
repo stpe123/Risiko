@@ -1,7 +1,7 @@
 [Files]
 File0=BackGroundPane.java
 File1=Gebiet.java
-File2=Kriegserklärung.java
+File2=Kriegserklaerung.java
 File3=Risiko.java
 File4=Spieler.java
 File5=Verwaltung.java
@@ -19,8 +19,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Gebiet]
-X=238
-Y=496
+X=310
+Y=607
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -28,9 +28,9 @@ ShowIcons=0
 FontSize=10
 FontName=MS Sans Serif
 
-[Box:  - Kriegserklärung]
-X=1314
-Y=83
+[Box:  - Kriegserklaerung]
+X=443
+Y=67
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -69,8 +69,8 @@ FontSize=10
 FontName=MS Sans Serif
 
 [Box:  - Weltkarte]
-X=402
-Y=305
+X=256
+Y=356
 MinVis=0
 ShowParameter=4
 SortOrder=0
@@ -91,7 +91,7 @@ FontName=MS Sans Serif
 [Diagram]
 comments=0
 OffsetX=0
-OffsetY=0
+OffsetY=109
 Visibility=0
 ShowParameter=4
 SortOrder=0
@@ -102,20 +102,23 @@ Fontsize=10
 ShowObjectDiagram=0
 
 [Connections]
-V0=Spieler#Gebiet#Aggregation####0#0#0
-V1=Spieler#Wuerfel#AssociationDirected####0#0#0
-V2=Spieler#Kriegserklärung#AssociationDirected####0#0#0
-V3=Verwaltung#Spieler#AssociationDirected####0#0#0
-V4=Verwaltung#Gebiet#Aggregation####0#0#0
-V5=Weltkarte#Gebiet#Aggregation####0#0#0
+V0=Gebiet#Gebiet#Aggregation####1#0#0
+V1=Kriegserklaerung#Gebiet#AssociationDirected####0#0#0
+V2=Risiko#Kriegserklaerung#AssociationDirected####0#0#0
+V3=Spieler#Gebiet#Aggregation####0#0#0
+V4=Spieler#Wuerfel#AssociationDirected####0#0#0
+V5=Spieler#Kriegserklaerung#AssociationDirected####0#0#0
+V6=Verwaltung#Spieler#AssociationDirected####0#0#0
+V7=Verwaltung#Gebiet#Aggregation####0#0#0
+V8=Weltkarte#Gebiet#Aggregation####0#0#0
 
 [Interactive]
 I0=
 
 [Window]
-Left=100
+Left=125
 =>>>>>>> 04d3fb95080637b0b32cc57bde6b8472d9fc459e
-Top=100
+Top=125
 Width=1212
 Height=300
 

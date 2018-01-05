@@ -150,10 +150,7 @@ public class Spieler {
       this.TruppenSetzen(Anzahl);
     } // end of if-else   
   }
-  
-  
-  
-  
+
   /**
   *Gibt dem Spieler die Möglichkeit, Truppen von einem Gebiet zu einem Nachbargebiet zu
   bewegen, wenn dieses nicht feindlich besetzt ist.
@@ -167,6 +164,7 @@ public class Spieler {
   Anzahl ist positiv, damit die Soldaten entfernt werden.
   */
   public void SoldatLoeschen(int Anzahl, String Gebiet) {
+    //Abfrage, ob noch Soldaten auf dem Gebiet sind muss noch implementiert werden!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     for (int i = 0;i<this.MeineGebiete.size();i++){
       //      Wenn das Gebiet, von dem Soldaten entfernt werden muss, gefunden wurde
       if (Gebiet == this.MeineGebiete.get(i).getName()) {
@@ -203,9 +201,6 @@ public class Spieler {
   */
   public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
     this.MeineGebiete.addAll(GebieteAnSpieler);   
-    //    for (int i = 0;i<this.MeineGebiete.size();i++){
-    //      System.out.println(this.MeineGebiete.get(i).getName());
-    //     
   }
   /**
   *Gibt die Gebiete des Spielers in einer ArrayList zurück.

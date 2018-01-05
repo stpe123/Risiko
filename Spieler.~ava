@@ -164,7 +164,7 @@ public class Spieler {
   }
   /**
   *Löscht einen Soldaten auf der aktuellen "Kriegserklaerung".
-  Anzahl ist positiv.
+  Anzahl ist positiv, damit die Soldaten entfernt werden.
   */
   public void SoldatLoeschen(int Anzahl, String Gebiet) {
     for (int i = 0;i<this.MeineGebiete.size();i++){
@@ -176,6 +176,7 @@ public class Spieler {
     }
     
   }
+
   
   /**
   *Erwartet den Name des zurückzugebenden Gebiets als Eingabewert.
