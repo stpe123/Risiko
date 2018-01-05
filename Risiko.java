@@ -25,6 +25,7 @@ public class Risiko {
     ArrayList<Spieler> spieler = new ArrayList<>();
     spieler.add (new Spieler("Stefan"));
     spieler.add (new Spieler("Alex"));
+    spieler.add (new Spieler("Marcus"));
     
     Spieler AktuellerSpieler;
     Spieler Verteidiger;

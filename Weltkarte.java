@@ -44,26 +44,6 @@ public class Weltkarte extends JFrame{
     for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){
       panel.add (li.next());
     }
-    
-    //Farbeinstellungen für die Gebiete
-    Gebiete.get(0).setForeground(Color.green);
-    Gebiete.get(1).setForeground(Color.red);
-    Gebiete.get(2).setForeground(Color.red);
-    Gebiete.get(3).setForeground(Color.green);
-    Gebiete.get(4).setForeground(Color.red);
-    Gebiete.get(5).setForeground(Color.green);
-    Gebiete.get(6).setForeground(Color.red);
-    
-    
-    Gebiete.get(0).setText("15");
-    Gebiete.get(1).setText("8");
-    Gebiete.get(2).setText("12");
-    Gebiete.get(3).setText("10");
-    Gebiete.get(4).setText("8");
-    Gebiete.get(5).setText("12");
-    Gebiete.get(6).setText("10");
-    
-    
     setVisible(true);
   }
   
@@ -88,7 +68,7 @@ public class Weltkarte extends JFrame{
   
   private void GebieteDefinieren() {
     this.Gebiete.add (new Gebiet("Russland",670,100));
-    this.Gebiete.add (new Gebiet("Deutschland",440,180));
+    this.Gebiete.add (new Gebiet("Nordeuropa",440,180));
     this.Gebiete.add (new Gebiet("Amerika",120,180));
     this.Gebiete.add (new Gebiet("Polen",520,150));
     this.Gebiete.add (new Gebiet("Afrika",50,200));
@@ -106,8 +86,7 @@ public class Weltkarte extends JFrame{
       Namensliste.get(i).setFont(this.getFont().deriveFont(25f));                //Schriftgröße festlegen
       Namensliste.get(i).setBounds(10, i*30, 100, 50);                           //Position und Größe festlegen
       Namensliste.get(i).setText(Spielernamen.get(i).getName());                 //Text festlegen
-      Spielernamen.get(i).setFarbe(Spielerfarben[i]);
-      //setVisible(true);
+      Spielernamen.get(i).setFarbe(Spielerfarben[i]);                            //Dem Spieler seine Farbe bekanntgeben
     }
     
   }
