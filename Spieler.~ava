@@ -202,7 +202,7 @@ public class Spieler {
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String TruppenBewegenGebiet = (String)JOptionPane.showInputDialog(
     null,
-    this.getName() + ": Von welchem Gebiet möchten Truppen bewegen?",
+    this.getName() + ": Von welchem Gebiet möchten Sie Truppen bewegen?",
     "Truppen bewegen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -297,18 +297,20 @@ public class Spieler {
   Gibt ein Gebiet zurück und entfernt das übergebene Gebiet aus "MeineGebiete".
   Wird ein Gebiet angefordert, das der Spieler nicht hat, wird null zurückgegeben
   */
-  public Gebiet GebietAbgeben(String GebietName) {
+  public ArrayList<Gebiet> GebietAbgeben(String GebietName) {
+    ArrayList<Gebiet> GebietAbgeben = new ArrayList<Gebiet>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       //      Wenn das Gebiet, das abgegeben werden muss gefunden wurde
       if (GebietName == this.MeineGebiete.get(i).getName()) {
-        Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
+        GebietAbgeben.add(this.MeineGebiete.get(i));
         this.MeineGebiete.remove(i); 
-        return GebietZwischenspeichern;        
+        return null;        
       } // end of if
     } 
     //    Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
     return null;                  
   }
+
   
   
   

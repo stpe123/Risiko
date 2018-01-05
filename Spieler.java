@@ -27,7 +27,7 @@ public class Spieler {
   // -> neuer Konstruktor ohne Übergabeparameter erstellen
   public Spieler(String Name) {
     this.Name = Name;
-    this.MeineGebiete = new ArrayList<>();
+    this.MeineGebiete = new ArrayList<Gebiet>();
     this.Wuerfel = new Wuerfel();
     this.Kriegserklaerung = new Kriegserklaerung();
   }
@@ -294,21 +294,23 @@ public class Spieler {
   
   /**
   *Erwartet den Name des zurückzugebenden Gebiets als Eingabewert.
-  Gibt ein Gebiet zurück und entfernt das übergebene Gebiet aus "MeineGebiete".
+  Gibt ein Gebiet in einer ArrayList zurück und entfernt das übergebene Gebiet aus "MeineGebiete".
   Wird ein Gebiet angefordert, das der Spieler nicht hat, wird null zurückgegeben
   */
-  public Gebiet GebietAbgeben(String GebietName) {
+  public ArrayList<Gebiet> GebietAbgeben(String GebietName) {
+    ArrayList<Gebiet> GebietAbgeben = new ArrayList<Gebiet>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       //      Wenn das Gebiet, das abgegeben werden muss gefunden wurde
       if (GebietName == this.MeineGebiete.get(i).getName()) {
-        Gebiet GebietZwischenspeichern = this.MeineGebiete.get(i);
-        this.MeineGebiete.remove(i); 
-        return GebietZwischenspeichern;        
+        GebietAbgeben.add(this.MeineGebiete.get(i));
+        this.MeineGebiete.remove(i);
+        return GebietAbgeben;
       } // end of if
     } 
     //    Wenn Methode hier angekommen ist, besitzt Spieler das angeforderte Gebiet nicht
     return null;                  
   }
+
   
   
   
