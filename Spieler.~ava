@@ -44,7 +44,7 @@ public class Spieler {
     //    Würfeln
     this.Kriegserklaerung.setAugenzahl(this.Wuerfel.getAugenzahl());
     //Namen der Gebiete des Spielers in einer Liste speichern
-    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
+    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
     } 
@@ -52,7 +52,7 @@ public class Spieler {
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String Angriffsgebiet = (String)JOptionPane.showInputDialog(
     null,
-    "Von welchem Gebiet möchten Sie angreifen?",
+    this.getName() + ": Von welchem Gebiet möchten Sie angreifen?",
     "Angriff Starten",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -62,12 +62,15 @@ public class Spieler {
       //      Angriff abgebrochen  
       return null;
     } // end of if
+    else {
+      this.Kriegserklaerung.setAngreifendesGebiet(Angriffsgebiet);
+    } // end of if-else
     
     //    Dialogbox: Kriegserklaerung Auswählen (Muss ein Nachbarland des Ausgewählten eigenen Gebiets sein) 
     Object[] MoeglicheKriegsgebiete = {"4", "5", "6"};
     String KriegsgebietName = (String)JOptionPane.showInputDialog(
     null,
-    "Welches Gebiet möchten Sie angreifen?",
+    this.getName() + ": Welches Gebiet möchten Sie angreifen?",
     "Kriegserklaerung auswählen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -77,7 +80,7 @@ public class Spieler {
       //      Angriff abgebrochen  
       return null;
     } // end of if
-    this.Kriegserklaerung.setName(KriegsgebietName);
+    this.Kriegserklaerung.setKriegsgebiet(KriegsgebietName);
     return this.Kriegserklaerung;   
   }
   
@@ -94,7 +97,7 @@ public class Spieler {
   */
   public void TruppenSetzen(int Anzahl) {
     //Namen der Gebiete des Spielers in einer Liste speichern
-    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList();
+    ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
     }  
@@ -102,7 +105,7 @@ public class Spieler {
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String GebietTruppenSetzen = (String)JOptionPane.showInputDialog(
     null,
-    "Auf welches Gebiet möchten Sie Soldaten setzen?",
+    this.getName() + ": Auf welches Gebiet möchten Sie Soldaten setzen?",
     "Soldaten setzen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -119,7 +122,7 @@ public class Spieler {
     } // end of for
     Integer AuswahlAnzahlSoldatenSetzen = (Integer)JOptionPane.showInputDialog(
     null,
-    "Wieviele Soldaten möchten Sie setzen?",
+    this.getName() + ": Wieviele Soldaten möchten Sie setzen?",
     "Soldaten setzen",
     JOptionPane.PLAIN_MESSAGE,
     null,
@@ -146,7 +149,7 @@ public class Spieler {
       this.TruppenSetzen(Anzahl);
     } // end of if-else   
   }
-
+  
   /**
   *Gibt dem Spieler die Möglichkeit, Truppen von einem Gebiet zu einem Nachbargebiet zu
   bewegen, wenn dieses nicht feindlich besetzt ist.
@@ -170,7 +173,7 @@ public class Spieler {
     }
     
   }
-
+  
   
   /**
   *Erwartet den Name des zurückzugebenden Gebiets als Eingabewert.
@@ -195,8 +198,12 @@ public class Spieler {
   *Erwartet eine ArrayList von Gebieten als Übergabewert, speichert 
   diese in "MeineGebiete". 
   */
-  public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {
-    this.MeineGebiete.addAll(GebieteAnSpieler);   
+  public void GebieteAnnehmen(ArrayList<Gebiet> GebieteAnSpieler) {  
+    this.MeineGebiete.addAll(GebieteAnSpieler);
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      //Name als Besitzer reinschreiben
+      this.MeineGebiete.get(i).setBesitzer(this.getName());  
+    }
   }
   /**
   *Gibt die Gebiete des Spielers in einer ArrayList zurück.
@@ -211,7 +218,7 @@ public class Spieler {
     //Dialog Box: "Möchten Sie angreifen"   
     Object[] options = {"Nein","Ja"};
     int angriff = JOptionPane.showOptionDialog(null,
-    "Möchten Sie angreifen",
+    this.getName() + ": Möchten Sie angreifen",
     "Anfrage: Angriff",
     JOptionPane.YES_NO_OPTION,
     JOptionPane.QUESTION_MESSAGE,

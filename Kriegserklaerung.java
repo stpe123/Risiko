@@ -9,25 +9,25 @@
 public class Kriegserklaerung {
   
   // Anfang Attribute
-  private int Augenzahl;
-  private String Name;
+  private String Kriegsgebiet;
+  private String AngreifendesGebiet;
   // Ende Attribute
   
   // Anfang Methoden
-  public int getAugenzahl() {
-    return Augenzahl;
+  public String getKriegsgebiet() {
+    return Kriegsgebiet;
   }
 
-  public void setAugenzahl(int Augenzahl) {
-    this.Augenzahl = Augenzahl;
+  public void setKriegsgebiet(String Kriegsgebiet) {
+    this.Kriegsgebiet = Kriegsgebiet;
   }
 
-  public String getName() {
-    return Name;
+  public String getAngreifendesGebiet() {
+    return AngreifendesGebiet;
   }
 
-  public void setName(String Name) {
-    this.Name = Name;
+  public void setAngreifendesGebiet(String AngreifendesGebiet) {
+    this.AngreifendesGebiet = AngreifendesGebiet;
   }
 
   // Ende Methoden
