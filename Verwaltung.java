@@ -23,8 +23,8 @@ public class Verwaltung {
   
   
   //Konstruktor***********************************************************************
-  public Verwaltung(ArrayList<Spieler> spieler) {
-    this.spieler.addAll (spieler);
+  public Verwaltung() {
+    //this.spieler.addAll (spieler);
     //this.AktuellerSpieler = null;
   }
   
@@ -41,6 +41,18 @@ public class Verwaltung {
   }
   
   
+  public ArrayList<Spieler> SpielerErmitteln() {
+    String s="Name";
+    while (s!=null) { 
+      s=JOptionPane.showInputDialog("Bitte Spielername eingeben. Für Spielbeginn drücken Sie bitte auf Abbrechen");
+      if (s!=null) {
+        this.spieler.add (new Spieler(s));
+      }
+      
+    }
+    return spieler;
+  }
+  
   /**Übergibt ein Array vom Typ Gebiet
   Der Teilungsfaktor besagt, wie viele aller Gebiete abgegeben werden sollen.
   1=alle, 2=Hälfte, 3= 1/3 usw. aller Gebiete die sich in ihrem Speicher befinden.
@@ -53,6 +65,7 @@ public class Verwaltung {
   public ArrayList<Spieler> getSpieler() {
     return this.spieler;
   }  
+  
   
   public void WuerfelAugenzahlVergleichen() {
     
@@ -87,7 +100,7 @@ public class Verwaltung {
   
   
   public void GebieteAnSpielerVerteilen() {
-    
+    JOptionPane.showMessageDialog(null, "Willkommen! Alle Gebiete werden nun an die Spieler verteilt.");
     ArrayList<Gebiet> tmpGebiet = new ArrayList<>();  //Zwischenvariable  
     int z = 0;
     for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){      

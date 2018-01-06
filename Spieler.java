@@ -20,6 +20,7 @@ public class Spieler {
   private Wuerfel Wuerfel;
   private Kriegserklaerung Kriegserklaerung;                        
   private Color Farbe;
+  //private ArrayList<String> MeineAngriffsfaehigenGebiete = new ArrayList <String>();
   // Ende Attribute
   
   
@@ -45,9 +46,15 @@ public class Spieler {
   public Kriegserklaerung angreifen() {
     //Namen der Gebiete des Spielers in einer Liste speichern
     ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
+    NamenDerAktuellBessenenGebiete.clear();
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
-    } 
+      if (this.MeineGebiete.get(i).getAnzahlSoldaten() > 1) {
+        NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+      } // end of if
+      
+    }
+    
+     
     //    Dialogbox: MeineGebiete Auwählen, von dem aus angegriffen wird
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String Angriffsgebiet = (String)JOptionPane.showInputDialog(
@@ -121,6 +128,7 @@ public class Spieler {
   *Gibt einen Ineteger von 1 bis 6 zurück (Augenzahl des Würfels)
   */                                        
   public int wuerfeln() {
+    //JOptionPane.showMessageDialog(null,this.getName()+);
     return this.Wuerfel.getAugenzahl();
   }
   
@@ -140,8 +148,8 @@ public class Spieler {
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
     String TruppenSetzenGebiet = (String)JOptionPane.showInputDialog(
     null,
-    this.getName() + ": Auf welches Gebiet möchten Sie Soldaten setzen?",
-    "Soldaten setzen",
+    "Auf welches Gebiet möchten Sie Soldaten setzen?",
+    this.getName()+", Sie dürfen "+Anzahl+" Soldaten setzen",
     JOptionPane.PLAIN_MESSAGE,
     null,
     EigeneGebiete,
@@ -196,7 +204,9 @@ public class Spieler {
     //      Namen der Gebiete des Spielers in einer Liste speichern
     ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+      if (this.MeineGebiete.get(i).getAnzahlSoldaten()>1) {
+        NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+      } // end of if
     }
     //  Dialogbox: Gebiet Anwählen, von dem aus Truppen bewegt werden sollen
     Object[] EigeneGebiete = NamenDerAktuellBessenenGebiete.toArray();
@@ -220,8 +230,8 @@ public class Spieler {
     } // end of if
     else {
       // Anzahl der Soldaten, die von dem Gebiet bewegt werden sollen
-      Object [] AnzahlSoldatenBewegen = new Object[this.MeineGebiete.get(TruppenBewegenGebietIndex).getAnzahlSoldaten()]; 
-      for (int j = 0; j<this.MeineGebiete.get(TruppenBewegenGebietIndex).getAnzahlSoldaten() ;j++ ) {
+      Object [] AnzahlSoldatenBewegen = new Object[this.MeineGebiete.get(TruppenBewegenGebietIndex).getAnzahlSoldaten()-1]; 
+      for (int j = 0; j<this.MeineGebiete.get(TruppenBewegenGebietIndex).getAnzahlSoldaten()-1 ;j++ ) {
         AnzahlSoldatenBewegen[j] = j+1;                   //Java beginnt bei "0" an zu Zählen        
       } // end of for
       Integer AuswahlAnzahlSoldatenBewegen = (Integer)JOptionPane.showInputDialog(
@@ -329,6 +339,17 @@ public class Spieler {
   }
   
   
+    public void GebietErobern(ArrayList<Gebiet> GebieteAnSpieler) {  
+    JOptionPane.showMessageDialog(null, this.getName()+", Sie haben "+GebieteAnSpieler.get(0).getName()+" erobert!");
+    this.MeineGebiete.addAll(GebieteAnSpieler);
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      //Name als Besitzer reinschreiben
+      this.MeineGebiete.get(i).setBesitzer(this.getName());
+      //Farbe zufügen 
+      this.MeineGebiete.get(i).setFarbe(this.getFarbe());
+    }
+  }
+  
   
   /**
   *Gibt die Gebiete des Spielers in einer ArrayList zurück.
@@ -343,10 +364,10 @@ public class Spieler {
   *Liefert true, wenn der Spieler angreifen möchte, sonst false.
   */ 
   public boolean MoechtenSieAngreifen() {
-    //Dialog Box: "Möchten Sie angreifen"   
+    //Dialog Box: "Möchten Sie angreifen?"   
     Object[] options = {"Nein","Ja"};
     int angriff = JOptionPane.showOptionDialog(null,
-    this.getName() + ": Möchten Sie angreifen",
+    this.getName() + ": Möchten Sie angreifen?",
     "Anfrage: Angriff",
     JOptionPane.YES_NO_OPTION,
     JOptionPane.QUESTION_MESSAGE,

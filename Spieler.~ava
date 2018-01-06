@@ -121,6 +121,7 @@ public class Spieler {
   *Gibt einen Ineteger von 1 bis 6 zurück (Augenzahl des Würfels)
   */                                        
   public int wuerfeln() {
+    //JOptionPane.showMessageDialog(null,this.getName()+);
     return this.Wuerfel.getAugenzahl();
   }
   
@@ -328,6 +329,17 @@ public class Spieler {
     }
   }
   
+  
+    public void GebietErobern(ArrayList<Gebiet> GebieteAnSpieler) {  
+    JOptionPane.showMessageDialog(null, this.getName()+", Sie haben "+GebieteAnSpieler.get(0).getName()+" erobert");
+    this.MeineGebiete.addAll(GebieteAnSpieler);
+    for (int i = 0;i<this.MeineGebiete.size();i++){
+      //Name als Besitzer reinschreiben
+      this.MeineGebiete.get(i).setBesitzer(this.getName());
+      //Farbe zufügen 
+      this.MeineGebiete.get(i).setFarbe(this.getFarbe());
+    }
+  }
   
   
   /**

@@ -87,7 +87,7 @@ public class Verwaltung {
   
   
   public void GebieteAnSpielerVerteilen() {
-    
+    JOptionPane.showMessageDialog(null, "Willkommen! Alle Gebiete werden nun an die Spieler verteilt.");
     ArrayList<Gebiet> tmpGebiet = new ArrayList<>();  //Zwischenvariable  
     int z = 0;
     for (ListIterator<Gebiet> li = Gebiete.listIterator(0); li.hasNext();){      

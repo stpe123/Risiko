@@ -7,6 +7,7 @@
   */
 
   import java.util.*;
+  import javax.swing.JOptionPane;     //Dialogbox 
   
   
 public class Risiko {
@@ -21,12 +22,21 @@ public class Risiko {
   public static void main(String[] args) {
     
     //********************************Initialisierungsphase*********************************************************
-    //Alle Objekte anlegen
-    ArrayList<Spieler> spieler = new ArrayList<>();
-    spieler.add (new Spieler("Stefan"));
-    spieler.add (new Spieler("Alex"));
-    spieler.add (new Spieler("Marcus"));
     
+    
+    Weltkarte Erde = new Weltkarte();
+    Verwaltung VW = new Verwaltung();
+    
+    //Spieler anlegen
+    ArrayList<Spieler> spieler = new ArrayList<>();
+    spieler.addAll(VW.SpielerErmitteln());
+    
+    
+    
+    
+    
+    
+    Spieler Rundengewinner;
     Spieler AktuellerSpieler;
     Spieler Verteidiger;
     Kriegserklaerung Kriegserkl;
@@ -35,8 +45,8 @@ public class Risiko {
     int AugenzahlAngreifer;
     int AugenzahlVerteidiger;
     
-    Verwaltung VW = new Verwaltung(spieler);
-    Weltkarte Erde = new Weltkarte();    
+    
+    
     Erde.SpielerAnzeigen(spieler);
     
     //Verwaltung verteilt die Gebietskarten an Spieler
@@ -45,6 +55,7 @@ public class Risiko {
     VW.GebieteAnSpielerVerteilen();
     
     //Jeder darf eine feste Anzahl an Soldaten verteilen
+    JOptionPane.showMessageDialog(null,"Bevor wir beginnen darf jeder 10 Soldaten auf seinen Feldern verteilen");
     for (ListIterator<Spieler> li = spieler.listIterator(0); li.hasNext();){
       li.next().TruppenSetzen(10);
     }
@@ -55,7 +66,7 @@ public class Risiko {
     
     
     
-    
+    JOptionPane.showMessageDialog(null,"Das Spiel kann nun beginnen!");
     
     //****************************Das Spiel beginnt***************************************************************
     while (VW.GewinnerErmitteln() == false) { 
@@ -83,15 +94,26 @@ public class Risiko {
         AugenzahlAngreifer = AktuellerSpieler.wuerfeln();
         AugenzahlVerteidiger = Verteidiger.wuerfeln();
         
-        //Verteidiger hat verloren
+        //Gewinner ermitteln
         if (AugenzahlAngreifer >= AugenzahlVerteidiger) {
+          Rundengewinner=AktuellerSpieler;
+        }
+        else {
+          Rundengewinner=Verteidiger;
+        }
+        
+        //Gewinner bekanntgeben 
+        JOptionPane.showMessageDialog(null,AktuellerSpieler.getName()+", Sie haben eine "+AugenzahlAngreifer+" gewürfelt.\n"+Verteidiger.getName()+", Sie eine "+AugenzahlVerteidiger+".\n"+Rundengewinner.getName()+", Sie haben diese Runde gewonnen!");
+        
+        //Verteidiger hat verloren
+        if (Rundengewinner.getName() == AktuellerSpieler.getName()) {
           if (VerteidigungsGebiet.getAnzahlSoldaten() > 1) {
             //Der Verteidiger ist noch Besitzer des Gebietes, muss aber einen Soldat wegnehmen
             Verteidiger.SoldatLoeschen(1,VerteidigungsGebiet.getName());
           }
           else {
             //Der Verteidiger hat keine Soldaten mehr auf dem Gebiet und muss es nun abgeben
-            AktuellerSpieler.GebieteAnnehmen(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
+            AktuellerSpieler.GebietErobern(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
             if (Verteidiger.getMeineGebiete().size() == 0) {
               //Spieler hat verloren und wird gelöscht
               VW.SpielerEntfernen(Verteidiger);
@@ -107,7 +129,7 @@ public class Risiko {
         } // end of if
       }
       
-      
+      AktuellerSpieler.TruppenBewegen();
       
     }
   } // end of while  

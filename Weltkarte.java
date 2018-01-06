@@ -117,6 +117,146 @@ public class Weltkarte extends JFrame{
     this.Gebiete.add (new Gebiet("Japan",815,190));               //40
     this.Gebiete.add (new Gebiet("Kamtschatka",760,110));         //41
     
+    
+    //Kamtschatka
+    this.Gebiete.get(41).NachbargebietHinzufuegen(this.Gebiete.get(37).getName());
+    this.Gebiete.get(41).NachbargebietHinzufuegen(this.Gebiete.get(38).getName());
+    this.Gebiete.get(41).NachbargebietHinzufuegen(this.Gebiete.get(39).getName());
+    this.Gebiete.get(41).NachbargebietHinzufuegen(this.Gebiete.get(40).getName());
+    this.Gebiete.get(41).NachbargebietHinzufuegen(this.Gebiete.get(0).getName());
+    
+    //Japan
+    this.Gebiete.get(40).NachbargebietHinzufuegen(this.Gebiete.get(41).getName());
+    this.Gebiete.get(40).NachbargebietHinzufuegen(this.Gebiete.get(39).getName());
+    
+    //Mongolei
+    this.Gebiete.get(39).NachbargebietHinzufuegen(this.Gebiete.get(41).getName());
+    this.Gebiete.get(39).NachbargebietHinzufuegen(this.Gebiete.get(38).getName());
+    this.Gebiete.get(39).NachbargebietHinzufuegen(this.Gebiete.get(36).getName());
+    this.Gebiete.get(39).NachbargebietHinzufuegen(this.Gebiete.get(33).getName());
+    this.Gebiete.get(39).NachbargebietHinzufuegen(this.Gebiete.get(40).getName());
+    
+    //Irkutsk
+    this.Gebiete.get(38).NachbargebietHinzufuegen(this.Gebiete.get(41).getName());
+    this.Gebiete.get(38).NachbargebietHinzufuegen(this.Gebiete.get(37).getName());
+    this.Gebiete.get(38).NachbargebietHinzufuegen(this.Gebiete.get(36).getName());
+    this.Gebiete.get(38).NachbargebietHinzufuegen(this.Gebiete.get(39).getName());
+    
+    //Jakutien
+    this.Gebiete.get(37).NachbargebietHinzufuegen(this.Gebiete.get(41).getName());
+    this.Gebiete.get(37).NachbargebietHinzufuegen(this.Gebiete.get(38).getName());
+    this.Gebiete.get(37).NachbargebietHinzufuegen(this.Gebiete.get(36).getName());
+    
+    //Sibirien
+    this.Gebiete.get(36).NachbargebietHinzufuegen(this.Gebiete.get(37).getName());
+    this.Gebiete.get(36).NachbargebietHinzufuegen(this.Gebiete.get(38).getName());
+    this.Gebiete.get(36).NachbargebietHinzufuegen(this.Gebiete.get(39).getName());
+    this.Gebiete.get(36).NachbargebietHinzufuegen(this.Gebiete.get(33).getName());
+    this.Gebiete.get(36).NachbargebietHinzufuegen(this.Gebiete.get(35).getName());
+    
+    //Ural
+    this.Gebiete.get(35).NachbargebietHinzufuegen(this.Gebiete.get(36).getName());
+    this.Gebiete.get(35).NachbargebietHinzufuegen(this.Gebiete.get(33).getName());
+    this.Gebiete.get(35).NachbargebietHinzufuegen(this.Gebiete.get(34).getName());
+    this.Gebiete.get(35).NachbargebietHinzufuegen(this.Gebiete.get(29).getName());
+    
+    //Afghanistan
+    this.Gebiete.get(34).NachbargebietHinzufuegen(this.Gebiete.get(30).getName());
+    this.Gebiete.get(34).NachbargebietHinzufuegen(this.Gebiete.get(31).getName());
+    this.Gebiete.get(34).NachbargebietHinzufuegen(this.Gebiete.get(33).getName());
+    this.Gebiete.get(34).NachbargebietHinzufuegen(this.Gebiete.get(35).getName());
+    this.Gebiete.get(34).NachbargebietHinzufuegen(this.Gebiete.get(29).getName());
+    
+    //China
+    this.Gebiete.get(33).NachbargebietHinzufuegen(this.Gebiete.get(39).getName());
+    this.Gebiete.get(33).NachbargebietHinzufuegen(this.Gebiete.get(36).getName());
+    this.Gebiete.get(33).NachbargebietHinzufuegen(this.Gebiete.get(35).getName());
+    this.Gebiete.get(33).NachbargebietHinzufuegen(this.Gebiete.get(34).getName());
+    this.Gebiete.get(33).NachbargebietHinzufuegen(this.Gebiete.get(31).getName());
+    this.Gebiete.get(33).NachbargebietHinzufuegen(this.Gebiete.get(32).getName());
+    
+    //Südostasien
+    this.Gebiete.get(32).NachbargebietHinzufuegen(this.Gebiete.get(18).getName());
+    this.Gebiete.get(32).NachbargebietHinzufuegen(this.Gebiete.get(33).getName());
+    this.Gebiete.get(32).NachbargebietHinzufuegen(this.Gebiete.get(31).getName());
+    
+    //Indien
+    this.Gebiete.get(31).NachbargebietHinzufuegen(this.Gebiete.get(32).getName());
+    this.Gebiete.get(31).NachbargebietHinzufuegen(this.Gebiete.get(33).getName());
+    this.Gebiete.get(31).NachbargebietHinzufuegen(this.Gebiete.get(34).getName());
+    this.Gebiete.get(31).NachbargebietHinzufuegen(this.Gebiete.get(30).getName());
+    
+    //Mittlerer Osten
+    this.Gebiete.get(30).NachbargebietHinzufuegen(this.Gebiete.get(14).getName());
+    this.Gebiete.get(30).NachbargebietHinzufuegen(this.Gebiete.get(13).getName());
+    this.Gebiete.get(30).NachbargebietHinzufuegen(this.Gebiete.get(26).getName());
+    this.Gebiete.get(30).NachbargebietHinzufuegen(this.Gebiete.get(29).getName());
+    this.Gebiete.get(30).NachbargebietHinzufuegen(this.Gebiete.get(34).getName());
+    this.Gebiete.get(30).NachbargebietHinzufuegen(this.Gebiete.get(31).getName());
+    
+    
+    //Russland
+    this.Gebiete.get(29).NachbargebietHinzufuegen(this.Gebiete.get(28).getName());
+    this.Gebiete.get(29).NachbargebietHinzufuegen(this.Gebiete.get(27).getName());
+    this.Gebiete.get(29).NachbargebietHinzufuegen(this.Gebiete.get(26).getName());
+    this.Gebiete.get(29).NachbargebietHinzufuegen(this.Gebiete.get(30).getName());
+    this.Gebiete.get(29).NachbargebietHinzufuegen(this.Gebiete.get(34).getName());
+    this.Gebiete.get(29).NachbargebietHinzufuegen(this.Gebiete.get(35).getName());
+    
+    //Skandinavien
+    this.Gebiete.get(28).NachbargebietHinzufuegen(this.Gebiete.get(23).getName());
+    this.Gebiete.get(28).NachbargebietHinzufuegen(this.Gebiete.get(24).getName());
+    this.Gebiete.get(28).NachbargebietHinzufuegen(this.Gebiete.get(27).getName());
+    this.Gebiete.get(28).NachbargebietHinzufuegen(this.Gebiete.get(29).getName());
+    
+    //Nordeuropa
+    this.Gebiete.get(27).NachbargebietHinzufuegen(this.Gebiete.get(25).getName());
+    this.Gebiete.get(27).NachbargebietHinzufuegen(this.Gebiete.get(26).getName());
+    this.Gebiete.get(27).NachbargebietHinzufuegen(this.Gebiete.get(29).getName());
+    this.Gebiete.get(27).NachbargebietHinzufuegen(this.Gebiete.get(28).getName());
+    this.Gebiete.get(27).NachbargebietHinzufuegen(this.Gebiete.get(24).getName());
+    
+    //Südeuropa
+    this.Gebiete.get(26).NachbargebietHinzufuegen(this.Gebiete.get(25).getName());
+    this.Gebiete.get(26).NachbargebietHinzufuegen(this.Gebiete.get(27).getName());
+    this.Gebiete.get(26).NachbargebietHinzufuegen(this.Gebiete.get(29).getName());
+    this.Gebiete.get(26).NachbargebietHinzufuegen(this.Gebiete.get(30).getName());
+    this.Gebiete.get(26).NachbargebietHinzufuegen(this.Gebiete.get(13).getName());
+    this.Gebiete.get(26).NachbargebietHinzufuegen(this.Gebiete.get(12).getName());
+    
+    //Westeuropa
+    this.Gebiete.get(25).NachbargebietHinzufuegen(this.Gebiete.get(24).getName());
+    this.Gebiete.get(25).NachbargebietHinzufuegen(this.Gebiete.get(27).getName());
+    this.Gebiete.get(25).NachbargebietHinzufuegen(this.Gebiete.get(26).getName());
+    this.Gebiete.get(25).NachbargebietHinzufuegen(this.Gebiete.get(12).getName());
+    
+    //Grossbritanien
+    this.Gebiete.get(24).NachbargebietHinzufuegen(this.Gebiete.get(23).getName());
+    this.Gebiete.get(24).NachbargebietHinzufuegen(this.Gebiete.get(28).getName());
+    this.Gebiete.get(24).NachbargebietHinzufuegen(this.Gebiete.get(27).getName());
+    this.Gebiete.get(24).NachbargebietHinzufuegen(this.Gebiete.get(25).getName());
+    
+    //Island
+    this.Gebiete.get(23).NachbargebietHinzufuegen(this.Gebiete.get(22).getName());
+    this.Gebiete.get(23).NachbargebietHinzufuegen(this.Gebiete.get(24).getName());
+    this.Gebiete.get(23).NachbargebietHinzufuegen(this.Gebiete.get(28).getName());
+    
+    //Grönland
+    this.Gebiete.get(22).NachbargebietHinzufuegen(this.Gebiete.get(1).getName());
+    this.Gebiete.get(22).NachbargebietHinzufuegen(this.Gebiete.get(3).getName());
+    this.Gebiete.get(22).NachbargebietHinzufuegen(this.Gebiete.get(4).getName());
+    this.Gebiete.get(22).NachbargebietHinzufuegen(this.Gebiete.get(23).getName());
+    
+    //Neuguinea
+    this.Gebiete.get(21).NachbargebietHinzufuegen(this.Gebiete.get(18).getName());
+    this.Gebiete.get(21).NachbargebietHinzufuegen(this.Gebiete.get(19).getName());
+    this.Gebiete.get(21).NachbargebietHinzufuegen(this.Gebiete.get(20).getName());
+    
+    //Ostaustralien
+    this.Gebiete.get(20).NachbargebietHinzufuegen(this.Gebiete.get(19).getName());
+    this.Gebiete.get(20).NachbargebietHinzufuegen(this.Gebiete.get(21).getName());
+    
+    
     //Nachbargebiete definieren
     this.Gebiete.get(0).NachbargebietHinzufuegen(this.Gebiete.get(1).getName());
     this.Gebiete.get(0).NachbargebietHinzufuegen(this.Gebiete.get(2).getName());
@@ -217,7 +357,18 @@ public class Weltkarte extends JFrame{
     this.Gebiete.get(16).NachbargebietHinzufuegen(this.Gebiete.get(17).getName());
     
     //Madagaskar
+    this.Gebiete.get(17).NachbargebietHinzufuegen(this.Gebiete.get(14).getName());
+    this.Gebiete.get(17).NachbargebietHinzufuegen(this.Gebiete.get(16).getName());
     
+    //Indonesien
+    this.Gebiete.get(18).NachbargebietHinzufuegen(this.Gebiete.get(32).getName());
+    this.Gebiete.get(18).NachbargebietHinzufuegen(this.Gebiete.get(21).getName());
+    this.Gebiete.get(18).NachbargebietHinzufuegen(this.Gebiete.get(19).getName());
+    
+    //Westaustralien
+    this.Gebiete.get(19).NachbargebietHinzufuegen(this.Gebiete.get(18).getName());
+    this.Gebiete.get(19).NachbargebietHinzufuegen(this.Gebiete.get(21).getName());
+    this.Gebiete.get(19).NachbargebietHinzufuegen(this.Gebiete.get(20).getName());
     
     
   }
