@@ -19,7 +19,7 @@ public class Gebiet extends JLabel{
   private Color Farbe;
   private String Name;
   private ArrayList<String> Nachbargebiete;
-  private int AnzahlSoldaten;
+  private int AnzahlSoldaten = 0;
   private String Besitzer;
   // Ende Attribute
   
@@ -30,9 +30,9 @@ public class Gebiet extends JLabel{
   //Konstruktor************************************************************************
   public Gebiet(String Name, int xKoordinate, int yKoordinate) {
     this.Name = Name;
-    this.AnzahlSoldaten = 1;
-    this.setFont(this.getFont().deriveFont(25f));
-    this.setBounds(xKoordinate, yKoordinate, 30, 30);
+    this.setSoldat(1);
+    this.setFont(this.getFont().deriveFont(20f));
+    this.setBounds(xKoordinate, yKoordinate, 800, 30);
   }
   
   
@@ -82,6 +82,7 @@ public class Gebiet extends JLabel{
   
   public void setFarbe(Color Farbe) {
     this.Farbe = Farbe;
+    this.setForeground(Farbe);
   }
   // Ende Methoden
 } // end of Gebiet

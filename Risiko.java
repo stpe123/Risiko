@@ -91,7 +91,7 @@ public class Risiko {
           }
           else {
             //Der Verteidiger hat keine Soldaten mehr auf dem Gebiet und muss es nun abgeben
-            //AktuellerSpieler.GebieteAnnehmen(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
+            AktuellerSpieler.GebieteAnnehmen(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
             if (Verteidiger.getMeineGebiete().size() == 0) {
               //Spieler hat verloren und wird gelöscht
               VW.SpielerEntfernen(Verteidiger);
