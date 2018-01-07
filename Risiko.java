@@ -117,6 +117,10 @@ public class Risiko {
             if (Verteidiger.getMeineGebiete().size() == 0) {
               //Spieler hat verloren und wird gelöscht
               VW.SpielerEntfernen(Verteidiger);
+              if (VW.getSpieler().size() == 1) {//Wenn es nur noch einen Spieer gibt
+                JOptionPane.showMessageDialog(null,AktuellerSpieler.getName()+", Sie haben gewonnen!");
+                break;
+              } // end of if
             }
           }
         }

@@ -66,6 +66,7 @@ public class Verwaltung {
     return this.spieler;
   }  
   
+
   
   public void WuerfelAugenzahlVergleichen() {
     

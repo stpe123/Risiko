@@ -39,6 +39,7 @@ public class Spieler {
     return Name;
   }
   
+  
   /**
   *Keine Eingabewerte
   Ein Objekt wird zurückgegeben: Kriegsgebiet, Angriffsgebiet und Augenzahl des Würfels als Attribute
@@ -49,7 +50,7 @@ public class Spieler {
     NamenDerAktuellBessenenGebiete.clear();
     for (int i = 0;i<this.MeineGebiete.size();i++){
       if (this.MeineGebiete.get(i).getAnzahlSoldaten() > 1) {
-        NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+          NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
       } // end of if
       
     }
@@ -195,12 +196,35 @@ public class Spieler {
   
   
   
+  private boolean MoechtenSieTruppenBewegen() {  
+    //Dialog Box: "Möchten Sie angreifen?"   
+    Object[] options = {"Nein","Ja"};
+    int angriff = JOptionPane.showOptionDialog(null,
+    this.getName() + ": Möchten Sie noch Truppen bewegen?",
+    "Truppenbewegung",
+    JOptionPane.YES_NO_OPTION,
+    JOptionPane.QUESTION_MESSAGE,
+    null,
+    options,
+    options[1]);
+    // Ja: angriff == 1, Nein:angriff == 0;
+    if (angriff == 1) {
+      return true;
+    } // end of if
+    else {
+      return false;
+    } // end of if-else
+  }
+  
   /**
   *Gibt dem Spieler die Möglichkeit, Truppen von einem Gebiet zu einem Nachbargebiet zu
   bewegen, wenn dieses nicht feindlich besetzt ist.
   Ohne Eingabe-/Rückgabewerte.
   */
   public void TruppenBewegen() { 
+    while (this.MoechtenSieTruppenBewegen()) { 
+      
+      
     //      Namen der Gebiete des Spielers in einer Liste speichern
     ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
@@ -281,6 +305,7 @@ public class Spieler {
       //Möchte Spieler nochmal Truppen Bewegen?
       //this.TruppenBewegen();
     } // end of if-else
+        } // end of while
   }   
   
   
