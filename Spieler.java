@@ -38,7 +38,18 @@ public class Spieler {
   public String getName() {
     return Name;
   }
-  
+
+  public int getAnzahlBefreundeterNachbargebiete(Gebiet MeinGebiet) {
+    int BefreundeteNachbargebiete = 0;
+    for (int i = 0;i<MeinGebiet.getNachbargebiete().size();i++){
+      for (int j = 0;j<this.MeineGebiete.size();j++){
+        if (MeinGebiet.getNachbargebiete().get(i) == this.MeineGebiete.get(j).getName()) {
+          BefreundeteNachbargebiete++;
+        } 
+      }
+    } // end of for
+    return BefreundeteNachbargebiete;
+  }  
   
   /**
   *Keine Eingabewerte
@@ -49,7 +60,7 @@ public class Spieler {
     ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     NamenDerAktuellBessenenGebiete.clear();
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      if (this.MeineGebiete.get(i).getAnzahlSoldaten() > 1) {
+      if (this.MeineGebiete.get(i).getAnzahlSoldaten() > 1 && this.getAnzahlBefreundeterNachbargebiete(this.MeineGebiete.get(i)) < this.MeineGebiete.get(i).getNachbargebiete().size()) {
           NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
       } // end of if
       
@@ -228,8 +239,8 @@ public class Spieler {
     //      Namen der Gebiete des Spielers in einer Liste speichern
     ArrayList<String> NamenDerAktuellBessenenGebiete = new ArrayList <String>();
     for (int i = 0;i<this.MeineGebiete.size();i++){
-      if (this.MeineGebiete.get(i).getAnzahlSoldaten()>1) {
-        NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
+        if (this.MeineGebiete.get(i).getAnzahlSoldaten()>1 && this.getAnzahlBefreundeterNachbargebiete(this.MeineGebiete.get(i))>0) {
+          NamenDerAktuellBessenenGebiete.add(this.MeineGebiete.get(i).getName());
       } // end of if
     }
     //  Dialogbox: Gebiet Anwählen, von dem aus Truppen bewegt werden sollen
@@ -325,6 +336,9 @@ public class Spieler {
     
   }
   
+  public Gebiet getGebiet(int Position) {
+    return this.MeineGebiete.get(Position);                  
+  }
   
   
   /**

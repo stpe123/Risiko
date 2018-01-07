@@ -66,11 +66,13 @@ public class Verwaltung {
     return this.spieler;
   }  
   
-
+  
   
   public void WuerfelAugenzahlVergleichen() {
     
   }
+  
+  
   
   /**Erwartet ein Array mit Gebietsobjekten*/
   public void GebieteEinsammeln(ArrayList<Gebiet> Gebiete) {
