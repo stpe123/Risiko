@@ -37,7 +37,7 @@ public class Risiko {
     
     
     Spieler Rundengewinner;
-    Spieler AktuellerSpieler;
+    Spieler Angreifer;
     Spieler Verteidiger;
     Kriegserklaerung Kriegserkl;
     Gebiet AngreiferGebiet;
@@ -72,13 +72,15 @@ public class Risiko {
     while (VW.GewinnerErmitteln() == false) { 
       
       
-      AktuellerSpieler=VW.NaechstenSpielerBestimmen();
+      Angreifer=VW.NaechstenSpielerBestimmen();
       
-      AktuellerSpieler.TruppenSetzen(3);
+      Angreifer.TruppenSetzen(3);
       
       //Der aktuelle Spieler darf nun angreifen
-      while(AktuellerSpieler.MoechtenSieAngreifen()) {
-        Kriegserkl=AktuellerSpieler.angreifen();
+      while(Angreifer.MoechtenSieAngreifen()) {
+        
+        //Angreifer gibt Kriegserklarung mit Angreifergebiet und Angegriffenes zurück
+        Kriegserkl=Angreifer.angreifen();
         
         //Verteidiger und sein Gebiet ermitteln
         VerteidigungsGebiet=VW.getGebiet(Kriegserkl.getKriegsgebiet());
@@ -91,34 +93,34 @@ public class Risiko {
         
         //Gefechtssituation/////////////////////////////////////////////////////////
         //Beide würfeln
-        AugenzahlAngreifer = AktuellerSpieler.wuerfeln();
+        AugenzahlAngreifer = Angreifer.wuerfeln();
         AugenzahlVerteidiger = Verteidiger.wuerfeln();
         
         //Gewinner ermitteln
         if (AugenzahlAngreifer > AugenzahlVerteidiger) {
-          Rundengewinner=AktuellerSpieler;
+          Rundengewinner=Angreifer;
         }
         else {
           Rundengewinner=Verteidiger;
         }
         
         //Gewinner bekanntgeben 
-        JOptionPane.showMessageDialog(null,AktuellerSpieler.getName()+", Sie haben eine "+AugenzahlAngreifer+" gewürfelt.\n"+Verteidiger.getName()+", Sie eine "+AugenzahlVerteidiger+".\n"+Rundengewinner.getName()+", Sie haben diese Runde gewonnen!");
+        JOptionPane.showMessageDialog(null,Angreifer.getName()+", Sie haben eine "+AugenzahlAngreifer+" gewürfelt.\n"+Verteidiger.getName()+", Sie eine "+AugenzahlVerteidiger+".\n"+Rundengewinner.getName()+", Sie haben diese Runde gewonnen!");
         
         //Verteidiger hat verloren
-        if (Rundengewinner.getName() == AktuellerSpieler.getName()) {
+        if (Rundengewinner.getName() == Angreifer.getName()) {
           if (VerteidigungsGebiet.getAnzahlSoldaten() > 1) {
             //Der Verteidiger ist noch Besitzer des Gebietes, muss aber einen Soldat wegnehmen
             Verteidiger.SoldatLoeschen(1,VerteidigungsGebiet.getName());
           }
           else {
             //Der Verteidiger hat keine Soldaten mehr auf dem Gebiet und muss es nun abgeben
-            AktuellerSpieler.GebietErobern(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
+            Angreifer.GebietErobern(Verteidiger.GebietAbgeben(VerteidigungsGebiet.getName()));
             if (Verteidiger.getMeineGebiete().size() == 0) {
               //Spieler hat verloren und wird gelöscht
               VW.SpielerEntfernen(Verteidiger);
               if (VW.getSpieler().size() == 1) {//Wenn es nur noch einen Spieler gibt
-                JOptionPane.showMessageDialog(null,AktuellerSpieler.getName()+", Sie haben gewonnen!");
+                JOptionPane.showMessageDialog(null,Angreifer.getName()+", Sie haben gewonnen!");
                 break;
               } // end of if
             }
@@ -128,12 +130,12 @@ public class Risiko {
         //Angreifer hat verloren
         else {
           if (AngreiferGebiet.getAnzahlSoldaten() > 1) {
-            AktuellerSpieler.SoldatLoeschen(1,AngreiferGebiet.getName());
+            Angreifer.SoldatLoeschen(1,AngreiferGebiet.getName());
           } // end of if
         } // end of if
       }
       
-      AktuellerSpieler.TruppenBewegen();
+      Angreifer.TruppenBewegen();
       
     }
   } // end of while  
